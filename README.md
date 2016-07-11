@@ -53,7 +53,8 @@ $ npm i -D co-exec
 ```
 
 ## 测试
-- 同步
+
+### 同步
 
 js语言里除了ajax、setTimeout等大部分都是同步，写同步代码是一种幸福，稍后你就懂了
 
@@ -72,7 +73,7 @@ test('synchronization', t => {
 
 ```
 
-- 异步
+###  异步
 
 但是我们习惯回调，无论事件还是ajax，都是异步的。另外Node.js里又为了性能而异步，即所谓的天生异步，每个api都是异步的。
 
@@ -105,7 +106,7 @@ test.cb('error-first callback with exec', t => {
 });
 ```
 
-- promise
+###  promise
 
 
 > 为了让大家从回调的地狱中回到天堂，Promise你值得拥有
@@ -130,7 +131,7 @@ test('promise', t => {
 
 ```
 
-- generator
+###  generator
 
 generator是es6的一个特性，本身是用于计算的，通过generator和yield写的代码看起来像同步的，主要是yield来处理同步的事儿，但yield又只能在generator里。
 
@@ -149,7 +150,7 @@ test('generatorFn with exec()', function * (t) {
 });
 ```
 
-- async function
+###  async function
 
 generator执行的时候，需要先生成对象，然后next进行下一步。这样做起来还是比较麻烦，能不能不需要执行器啊？于是async函数就应运而生了。
 
@@ -167,7 +168,7 @@ test('async function', async t => {
 });
 ```
 
-执行
+## 执行
 
 ```
 ➜  asynchronous-flow-control git:(master) ✗ ava -v *.js
@@ -198,98 +199,11 @@ test('async function', async t => {
 - 第一个是并行的，所以顺序有点乱
 - 第二个是顺序执行 `-s`
 
-# co引出的“血案”
+# Promise
 
+顺序执行的代码和错误有限的回调方式都是js引擎默认支持的，这部分大家会调用接口，无太多变化，而Promise是对callback的思考，或者说改良方案，目前使用非常普遍，这里详细讲解一下。
 
-## generator/yield
-
-先看一下generator如何执行
-
-```
-function* doSomething() {
-    console.log('1');
-    yield; // Line (A)
-    console.log('2');
-}
-
-var gen1 = doSomething();
-
-gen1.next(); // Prints 1 then pauses at line (A)
-gen1.next(); // resumes execution at line (A), then prints 2
-```
-
-说明
-
-- gen1是产生出来的generator对象
-- 第一个next，会打印出1，之后悬停在 yield所在行，即Line (A)
-- 第二个next，恢复line (A)点的执行，之后打印出2
-
-如果有多个yield呢？无穷无尽的next。。。
-
-
-于是tj就写[co](https://github.com/tj/co)这个著名的generator执行器，co目前已经是v4了，彻底的面向Promise了，个中曲折也是够八卦的了。
-
-## co
-
-> co : The ultimate generator based flow-control goodness for nodejs (supports thunks, promises, etc)
-
-```
-var co = require('co');
-
-co(function *(){
-  // yield any promise
-  var result = yield Promise.resolve(true);
-})
-```
-
-这就是最简单的co示例。co就2个api
-
-- co(function *(){}) 包裹的是无参数的generator
-- co.wrap(function *(param){}) 有参数的generator
-
-```
-var fn = co.wrap(function* (val) {
-  return yield Promise.resolve(val);
-});
-
-fn(true).then(function (val) {
-
-});
-```
-
-## co源码解析
-
-co本身是一个小的状态机，无限next，直至返回值done为止。具体的源码解析见[cnode co 4.6源码](https://cnodejs.org/topic/576bdffa889605241796f7d9)，这里就不重复贴了。
-
-如果熟悉koa，可以看一下[convert](https://github.com/koajs/convert) or [compose](https://github.com/koajs/compose)
-
-# yieldable 6种
-
-yieldable本来是没有这个词的，因为在generator里可以是yield关键词，而yield后面接的有6种可能，故而把这些可以yield接的方式成为yieldable，即可以yield接的。
-
-- promises
-- thunks (functions)
-- array (parallel execution)
-- objects (parallel execution)
-- generators (delegation)
-- generator functions (delegation)
-
-![Co](images/co.png)
-
-- 顺序执行
-  - promises
-  - thunks
-- 并行
-  - array
-  - objects
-
-无论是哪种，它们其实都可以是Promise（thunks会慢慢的废弃，后面讲），既然是Promise对象，它们就可以thenable，而co v4.6版本的执行的返回值就是Promise，至此完成了左侧闭环。
-
-至于generator和generatorFunction就要从yield和yield*讲起，在koa 1.x和2.x里有明显的应用。
-
-## Promise
-
-### node里的Promise
+## node里的Promise
 
 promise最早是在commonjs社区提出来的，当时提出了很多规范。比较接受的是promise/A规范。后来人们在这个基础上。提出了promise/A+规范，也就是实际上的业内推行的规范。es6也是采用的这种规范。
 
@@ -322,7 +236,7 @@ Promise 的最大优势是标准，各类异步工具库都认同，未来的 as
 - when@3.7.4
 
 
-### Promise是什么？
+## Promise是什么？
 
 > A promise is an abstraction for asynchronous programming. It’s an object that proxies for the return value or the exception thrown by a function that has to do some asynchronous processing. — Kris Kowal on JSJ
 
@@ -347,7 +261,7 @@ var promise = new Promise(function(resolve, reject) {
 });
 ```
 
-### 术语
+## 术语
 
 - Promises	Promise规范自身
 - promise对象	promise对象指的是 Promise 实例对象
@@ -355,7 +269,7 @@ var promise = new Promise(function(resolve, reject) {
 - Promises/A+	Promises/A+。 这是ES6 Promises的前身，是一个社区规范，它和 ES6 Promises 有很多共通的内容。
 - Thenable	类Promise对象。 拥有名为.then方法的对象。
 
-### hello promise
+## hello promise
 
 给出一个最简单的读写文件的api实例，它是error-first风格的典型api
 
@@ -441,7 +355,7 @@ hello('./package.json').then(function(data){
 > Promise核心：将callback里的结果延后到then函数里处理或交给全局异常处理
 
 
-### 封装api的过程
+## 封装api的过程
 
 还是以上面的fs.readFile为例
 
@@ -488,7 +402,7 @@ function hello (file) {
 
 我们知道所有的Node.js都是error-first的callback形式，通过上面的例子，我们可以肯定是所有的Node.js的API都可以这样来处理，只要它们遵守Promise规范即可。
 
-### 每个函数的返回值都是Promise对象
+## 每个函数的返回值都是Promise对象
 
 为了简化编程复杂性，每个函数的返回值都是Promise对象，这样的约定可以大大的简化编程的复杂。
 
@@ -544,7 +458,7 @@ hello('./package.json').then(log).then(function(){
 
 无论是单个，还是流程链的返回值都是Promise对象，那么它就是一样的。
 
-### 链式的thenable
+## 链式的thenable
 
 每个promose对象都有then方法，也就是说，then方法是定义在原型对象Promise.prototype上的。它的作用是为Promise实例添加状态改变时的回调函数。
 
@@ -567,7 +481,7 @@ then的2个参数
 
 一般都是穿sucess回调函数即可。
 
-### 状态转换
+## 状态转换
 
 一个Promise必须处在其中之一的状态：pending, fulfilled 或 rejected.
 
@@ -600,7 +514,7 @@ Promise对象可以理解为一个乐高积木，它对下一个流程，传送�
   
 ”值不能被改变”指的是其identity不能被改变，而不是指其成员内容不能被改变。
 
-### reject和resove流程再造
+## reject和resove流程再造
 
 前面讲了，每个函数的返回值都是Promise对象，每个Promise对象都有then方法，这是它可以递归思路的解决办法。
 
@@ -773,7 +687,7 @@ tasks.hello('./package.json').then(tasks.step2).then(tasks.step1).catch(function
 
 更多好处，自行体会吧，这里就不做更多解释了。
 
-### 错误处理
+## 错误处理
 
 常用的处理方式是全局处理，即所有的异步操作都由一个catch来处理
 
@@ -887,7 +801,7 @@ oh, no!
 Not fired due to the catch
 ```
 
-### Node.js的promise库
+## Node.js的promise库
 
 Promise扩展类库除了实现了Promise中定义的规范之外，还增加了自己独自定义的功能。
 
@@ -930,7 +844,7 @@ Bluebird的文档除了提供了使用Promise丰富的实现方式之外，还�
 
 这两个类库的文档写得都很友好，即使我们不使用这两个类库，阅读一下它们的文档也具有一定的参考价值。
 
-### 替换bluebird
+## 替换bluebird
 
 bluebird是Node.js世界里性能最好的模块，api非常齐全，功能强大，是原生Promise外的不二选择。
 
@@ -985,7 +899,7 @@ var Promise = require("bluebird");
 global.Promise = require("bluebird");
 ```
 
-### Promisification
+## Promisification
 
 > Promisification means converting an existing promise-unaware API to a promise-returning API.
 
@@ -1034,7 +948,7 @@ obj.aAsync().then(obj.bAsync()).then(obj.cAsync()).catch(function(err){
 
 危险常常来自便利处，大量的这样promisifyAll，会不会有性能问题呢？error被bluebird包裹了，我们自己想定制呢？
 
-### Promise的5个api
+## Promise的5个api
 
 ![](images/promise-methods.png)
 
@@ -1251,7 +1165,7 @@ winner
 只要有一个成功，就会执行then，和顺序无关，只看执行速度: this is winner
 loser
 ```
-### 参考阅读
+## 参考阅读
 
 1. [Promises/A]( http://wiki.commonjs.org/wiki/Promises/A)
 2. [Promises/B]( http://wiki.commonjs.org/wiki/Promises/B)
@@ -1277,6 +1191,94 @@ loser
 
 源码 https://github.com/calvinmetcalf/lie/blob/master/lib/index.js
 
+# co引出的“血案”
+
+
+## generator/yield
+
+先看一下generator如何执行
+
+```
+function* doSomething() {
+    console.log('1');
+    yield; // Line (A)
+    console.log('2');
+}
+
+var gen1 = doSomething();
+
+gen1.next(); // Prints 1 then pauses at line (A)
+gen1.next(); // resumes execution at line (A), then prints 2
+```
+
+说明
+
+- gen1是产生出来的generator对象
+- 第一个next，会打印出1，之后悬停在 yield所在行，即Line (A)
+- 第二个next，恢复line (A)点的执行，之后打印出2
+
+如果有多个yield呢？无穷无尽的next。。。
+
+
+于是tj就写[co](https://github.com/tj/co)这个著名的generator执行器，co目前已经是v4了，彻底的面向Promise了，个中曲折也是够八卦的了。
+
+## co
+
+> co : The ultimate generator based flow-control goodness for nodejs (supports thunks, promises, etc)
+
+```
+var co = require('co');
+
+co(function *(){
+  // yield any promise
+  var result = yield Promise.resolve(true);
+})
+```
+
+这就是最简单的co示例。co就2个api
+
+- co(function *(){}) 包裹的是无参数的generator
+- co.wrap(function *(param){}) 有参数的generator
+
+```
+var fn = co.wrap(function* (val) {
+  return yield Promise.resolve(val);
+});
+
+fn(true).then(function (val) {
+
+});
+```
+
+## co源码解析
+
+co本身是一个小的状态机，无限next，直至返回值done为止。具体的源码解析见[cnode co 4.6源码](https://cnodejs.org/topic/576bdffa889605241796f7d9)，这里就不重复贴了。
+
+如果熟悉koa，可以看一下[convert](https://github.com/koajs/convert) or [compose](https://github.com/koajs/compose)
+
+# yieldable 6种
+
+yieldable本来是没有这个词的，因为在generator里可以是yield关键词，而yield后面接的有6种可能，故而把这些可以yield接的方式成为yieldable，即可以yield接的。
+
+- promises
+- thunks (functions)
+- array (parallel execution)
+- objects (parallel execution)
+- generators (delegation)
+- generator functions (delegation)
+
+![Co](images/co.png)
+
+- 顺序执行
+  - promises
+  - thunks
+- 并行
+  - array
+  - objects
+
+无论是哪种，它们其实都可以是Promise（thunks会慢慢的废弃，后面讲），既然是Promise对象，它们就可以thenable，而co v4.6版本的执行的返回值就是Promise，至此完成了左侧闭环。
+
+至于generator和generatorFunction就要从yield和yield*讲起，在koa 1.x和2.x里有明显的应用。
 
 
 # async/await
