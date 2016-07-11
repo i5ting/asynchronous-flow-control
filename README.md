@@ -1412,7 +1412,7 @@ co.wrap = function (fn) {
 
 如果熟悉koa，可以看一下[convert](https://github.com/koajs/convert) or [compose](https://github.com/koajs/compose)，或者在Koa中间件原理一节。
 
-# yieldable 6种
+# yieldable 5种
 
 yieldable本来是没有这个词的，因为在generator里可以是yield关键词，而yield后面接的有6种可能，故而把这些可以yield接的方式成为yieldable，即可以yield接的。
 
@@ -1420,8 +1420,7 @@ yieldable本来是没有这个词的，因为在generator里可以是yield关键
 - thunks (functions)
 - array (parallel execution)
 - objects (parallel execution)
-- generators (delegation)
-- generator functions (delegation)
+- generators and generatorFunctions
 
 ![Co](images/co.png)
 
