@@ -846,6 +846,8 @@ Bluebird的文档除了提供了使用Promise丰富的实现方式之外，还�
 
 ## 替换bluebird
 
+> tj: bluebird is MASSIVE, why not use v8's?
+
 bluebird是Node.js世界里性能最好的模块，api非常齐全，功能强大，是原生Promise外的不二选择。
 
 
@@ -1435,12 +1437,118 @@ yieldable本来是没有这个词的，因为在generator里可以是yield关键
 至于generator和generatorFunction就要从yield和yield*讲起，在koa 1.x和2.x里有明显的应用。
 
 ## promises
-##  thunks (functions)
-##  array (parallel execution)
-##  objects (parallel execution)
-##  generators (delegation)
-##  generator functions (delegation)
 
+上面已经讲了，这里就不重复讲了
+
+##  thunks (functions)
+
+编译器的"传名调用"实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。
+
+thunk?
+
+- thunk 是一个被封装了同步或异步任务的函数；
+- thunk 有唯一一个参数 callback，是 CPS 函数；
+- thunk 运行后返回新的 thunk 函数，形成链式调用；
+- thunk 自身执行完毕后，结果进入 callback 运行；
+- callback 的返回值如果是 thunk 函数，则等该 thunk 执行完毕将结果输入新 thunk 函数运行；如果是其它值，则当做正确结果进入新的 thunk 函数运行；
+
+在 JavaScript 语言中，Thunk 函数替换的不是表达式，而是多参数函数，将其替换成单参数的版本，且只接受回调函数作为参数。
+
+```
+// 正常版本的readFile（多参数版本）
+fs.readFile(fileName, callback);
+
+// Thunk版本的readFile（单参数版本）
+var readFileThunk = Thunk(fileName);
+readFileThunk(callback);
+
+var Thunk = function (fileName){
+  return function (callback){
+    return fs.readFile(fileName, callback); 
+  };
+};
+```
+
+上面代码中，fs 模块的 readFile 方法是一个多参数函数，两个参数分别为文件名和回调函数。经过转换器处理，它变成了一个单参数函数，只接受回调函数作为参数。这个单参数版本，就叫做 Thunk 函数。
+
+任何函数，只要参数有回调函数，就能写成 Thunk 函数的形式。下面是一个简单的 Thunk 函数转换器。
+
+```
+var Thunk = function(fn){
+  return function (){
+    var args = Array.prototype.slice.call(arguments);
+    return function (callback){
+      args.push(callback);
+      return fn.apply(this, args);
+    }
+  };
+};
+```
+
+使用上面的转换器，生成 fs.readFile 的 Thunk 函数。
+
+
+```
+var readFileThunk = Thunk(fs.readFile);
+readFileThunk(fileA)(callback);
+```
+
+更多
+
+- https://github.com/tj/node-thunkify
+- https://github.com/node-modules/thunkify-wrap
+- https://github.com/thunks/thunks
+
+##  array (parallel execution)
+
+```
+co(function* () {
+  var res = yield [
+    Promise.resolve(1),
+    Promise.resolve(2),
+    Promise.resolve(3),
+  ];
+  console.log(res); // => [1, 2, 3]
+}).catch(onerror);
+```
+
+##  objects (parallel execution)
+
+```
+co(function* () {
+  var res = yield {
+    1: Promise.resolve(1),
+    2: Promise.resolve(2),
+  };
+  console.log(res); // => { 1: 1, 2: 2 }
+}).catch(onerror);
+```
+
+## Generators and Generator Functions
+
+Any generator or generator function you can pass into co can be yielded as well. This should generally be avoided as we should be moving towards spec-compliant Promises instead.
+
+koa 1.x
+
+```
+app.use(function *(next){
+  var start = new Date;
+  yield next;
+  var ms = new Date - start;
+  console.log('%s %s - %s', this.method, this.url, ms);
+});
+```
+
+koa 2.x
+
+```
+app.use(co.wrap(function *(ctx, next) {
+  const start = new Date();
+  yield next();
+  const ms = new Date() - start;
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+}));
+```
 
 # async/await
 
