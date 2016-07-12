@@ -19,7 +19,72 @@ i5ting（江湖人称狼叔），空弦科技 CTO，StuQ 明星讲师，开源�
 
 ![I5ting](i5ting.jpg)
 
+
 # 流程控制
+
+js流程控制的演进过程，分以下5部分
+
+1. 同步代码
+1. 异步JavaScript: callbackhell
+1. Promise/a+
+1. 生成器Generators/yield
+1. Async函数/await（以前说是es7 stage-3）
+
+![Fc](fc.png)
+
+看起来挺简单的，作为*js[沾边]工程师的各位自测一下，当前是哪个阶段？
+
+
+> > > > 这次分享的主题《深入浅出js（Node.js）异步流程控制》，为什么要从下一代测试框架ava开始呢？
+
+
+i5ting：看似无关，但实际上测试框架才是对流程控制提供最全的最简洁的集成的，如果通用性的测试框架都解决不好流程控制问题，那么，这样的东西不用也罢。
+[AVA](https://github.com/avajs/ava)是面向未来的测试运行器，简单的说ava是mocha的替代品，对es6语法支持更好，对aysnc/await有支持，执行效率更高，使用io并发，就必须保证测试的原子性，语义上更简单，集众家之长。
+
+举个例子
+
+```
+test('synchronization', t => {
+
+})
+```
+
+是同步测试写法，如果里面有异步代码，你的测试就不正确了。
+
+解决办法非常简单
+
+```
+test.cb('asynchronization', t => {
+
+})
+```
+
+多了一个`cb`就解决了callball异步问题，是不是非常简单？
+
+```
+test.cb('error-first callback with setTimeout', t => {
+    setTimeout(() => {
+      t.pass();
+      t.end();
+    }, 2000);
+});
+
+```
+
+> > > > 总结
+在浏览器端，目前只有 Firefox 27 和 Chrome 39 以上的版本才支持 Generator，Node.js里还好，0.12之后就可以，而Async函数[Chrome 52. v8 5.1已经支持async函数](https://github.com/nodejs/CTC/issues/7)，更加蛋疼。。。那么，我们就不学了么？ 
+
+
+看一下我们要聊聊几种模式？
+
+- 1）同步
+- 2）callback
+- 3）promise
+- 4）generator
+- 5）async function
+
+
+
 
 - 从下一代测试框架ava开始
 - co引出的血案
