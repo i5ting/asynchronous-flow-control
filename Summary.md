@@ -356,6 +356,8 @@ yieldable本来是没有这个词的，因为在generator里可以是yield关键
 
 至于generator和generatorFunction就要从yield和yield*讲起，在koa 1.x和2.x里有明显的应用。
 
+最关键的，generator是用来计算的迭代器，它是过渡性的产物。yiedable足够强大，只是学习成本稍高，理解起来也有些难度。
+
 # > > > > 推导出学习重点
 
 ![All](all.png)
