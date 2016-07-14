@@ -63,7 +63,62 @@ js流程控制的演进过程，分以下6部分
 
 ## 同步 vs 异步
 
-## callbackhell
+测试一节说过：test和test.cb是2种，同步和callback处理
+
+
+js语言里除了ajax、setTimeout等大部分都是同步，写同步代码是一种幸福，稍后你就懂了
+
+1.js
+
+```
+import test from 'ava';
+
+test('synchronization', t => {
+  const a = /foo/;
+  const b = 'bar';
+  const c = 'baz';
+  t.false(a.test(b) || b === c);
+});
+
+```
+
+但是我们习惯回调，无论事件还是ajax，都是异步的。另外Node.js里又为了性能而异步，即所谓的天生异步，每个api都是异步的。
+
+以Node.js为例
+
+- error-first callback（错误优先的回调机制）
+- EventEmitter （事件发射机制）
+
+总结，callback是用的最多的，是绝大部分的api遵守的约定，而EventEmitter是辅助机制，通过继承EventEmitter，来解耦业务逻辑。
+
+2.js
+
+```
+import test from 'ava';
+const exec = require('child_process').exec
+
+test.cb('error-first callback with setTimeout', t => {
+    setTimeout(() => {
+      t.pass();
+      t.end();
+    }, 2000);
+});
+
+test.cb('error-first callback with exec', t => {
+  exec('cat *.js bad_file | wc -l',
+    function (error, stdout, stderr) {
+      t.pass();
+      t.end();
+  });
+});
+```
+
+test.cb必须和t.end结合，才能完成测试。这其实是理解异步的比较好的。异步就好比是你丢石头砸别人家的窗户，调用t.end的时候是人家发现的时候，至于在处理，看着办吧。
+
+## 普通函数，generator函数，async函数
+
+- test里，第二个参数有3种写法，普通函数，generator函数，async函数
+### 普通函数
 
 callbackhell译为回调地狱，回调都有地狱，可见大家对callback的厌恶程度，诚然过多嵌套回调的代码是非常难于维护，可读性极差。
 
@@ -84,7 +139,9 @@ step1(function (value1) {
 - 前端如ajax，后端如Node.js，回调是躲不过去的
 - 回调不止js有，其他语言也有
 
-## Thunk
+把callback转成普通函数，主要有2种解决方式：Thunk 和 Promise
+
+#### Thunk
 
 thunk是什么?
 
@@ -115,7 +172,7 @@ var Thunk = function (fileName){
 
 曾经大家都如此钟爱函数式，高阶函数，cps等，但Promise目前基本已经成为默认标准了，thunk用的会越来越少，但函数式的一些好的有点还是值得学的。
 
-## Promise/a+
+#### Promise/a+
 
 顺序执行的代码和错误有限的回调方式都是js引擎默认支持的，这部分大家会调用接口，无太多变化，而Promise是对callback的思考，或者说改良方案，目前使用非常普遍，这里详细讲解一下。
 
@@ -146,7 +203,7 @@ Promise表示一个异步操作的最终结果。与Promise最主要的交互方
 
 更多参考 《Node.js最新技术栈之Promise篇》 https://cnodejs.org/topic/560dbc826a1ed28204a1e7de
 
-## 生成器Generators/yield
+### 生成器Generators/yield
 
 Generator Function（生成器函数）和Generator（生成器）是ES6引入的新特性，该特性早就出现在了Python、C#等其他语言中。生成器本质上是一种特殊的[迭代器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/The_Iterator_protocol)。
 
@@ -186,7 +243,8 @@ gen1.next(); // resumes execution at line (A), then prints 2
 如果有多个yield呢？无穷无尽的next。。。
 
 于是tj就写[co](https://github.com/tj/co)这个著名的generator执行器，co目前已经是v4了，彻底的面向Promise了，个中曲折也是够八卦的了。
-## Async函数/await（以前说是es7 stage-3）
+
+### Async函数/await（以前说是es7 stage-3）
 
 generator的弊病是没有执行器，它本身就不是为流程控制而生的，所以co的出现只是解决了这个问题。
 
@@ -260,12 +318,40 @@ async函数总结
 - await接Promise，Promise自身就足够应对所有流程了
 - await释放Promise的组合能力，外加Promise的then，基本无敌
 
+# > > > > co引出的“血案”
 
-> > > > 总结
-在浏览器端，目前只有 Firefox 27 和 Chrome 39 以上的版本才支持 Generator，Node.js里还好，0.12之后就可以，而Async函数[Chrome 52. v8 5.1已经支持async函数](https://github.com/nodejs/CTC/issues/7)，更加蛋疼。。。那么，我们就不学了么？ 
+es6的generator本意是为了计算而设计的迭代器，但tj觉得它可以用于流程控制，于是就有了co，co的历史可以说经历了目前所有的流程控制方案，而且由于支持generator和yield就导致yieldable。
 
+实际上co和generator是把双刃剑，给了我们强大便利的同时，也增加了非常多的概念，可能是过渡性的，也可能是过时的。
 
-> > > > 推导出学习重点
+可是，你真的需要了解这么多么？从学习的角度，当然是多多意义，如果从实用的角度看，你可能不需要。
+
+存在即合理，那么我们就看看这“血案”吧。
+
+## yieldable 5种
+
+yieldable本来是没有这个词的，因为在generator里可以是yield关键词，而yield后面接的有6种可能，故而把这些可以yield接的方式成为yieldable，即可以yield接的。
+
+- promises
+- thunks (functions)
+- array (parallel execution)
+- objects (parallel execution)
+- generators and generatorFunctions
+
+![Co](images/co.png)
+
+- 顺序执行
+  - promises
+  - thunks
+- 并行
+  - array
+  - objects
+
+无论是哪种，它们其实都可以是Promise（thunks会慢慢的废弃，后面讲），既然是Promise对象，它们就可以thenable，而co v4.6版本的执行的返回值就是Promise，至此完成了左侧闭环。
+
+至于generator和generatorFunction就要从yield和yield*讲起，在koa 1.x和2.x里有明显的应用。
+
+# > > > > 推导出学习重点
 
 ![All](all.png)
 
