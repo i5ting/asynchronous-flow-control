@@ -252,8 +252,7 @@ generator的弊病是没有执行器，它本身就不是为流程控制而生�
 
 async/await 就是这样被搞出来的，很多人认为它是异步操作的终极解决方案。
 
-
-await
+await的3种可能
 
 - await + async函数
 - await + Promise
