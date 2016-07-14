@@ -1,3 +1,26 @@
+# asynchronous-flow-control
+
+InfoQ 前端之巅分享专业《深入浅出js（Node.js）异步流程控制》
+
+- [InfoQ 前端之巅分享 精简版](https://github.com/i5ting/asynchronous-flow-control/blob/master/31.md)
+
+## 摘要
+
+目前在js流程控制领域越来越乱，各种派系。。。比如promise，generator，async函数，各种混战，在百花齐放的今天，作为前端或Node.js沾边工程师或全栈工程师，你知道该学哪种么？
+
+- 从下一代测试框架ava说起
+- 流程控制发展的前世今生概览
+- 从co引出的血案，到yieldable 5种，到aysnc函数，聊聊同步的流程控制
+- 最后推导一下学习重点、未来趋势
+
+## 个人介绍
+
+i5ting（桑世龙），空弦科技 CTO，StuQ 明星讲师，开源项目 Moajs 作者，Node.js 技术布道者，即将出版《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》
+
+曾就职在新浪、网秦，曾做过前端、后端、数据分析、移动端负责人、做过首席架构师、技术总监，全栈技术实践者，目前主要关注技术架构和团队梯队建设方向。
+
+![I5ting](images/i5ting.jpg)
+
 # 流程控制
 
 - 从下一代测试框架ava开始
@@ -1812,3 +1835,6 @@ dao层使用promise
 对于新增的特性，可以适当的学习和使用，比如文中AVA测试框架，比如Koa 2.x，更多请关注即将出版的《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》，如果喜欢在线视频的，也可以看看StuQ的Koa课程，微信里搜stuq公众号，回复koa即可。
 
 
+# 联系我
+
+![Sang](images/sang.jpg)
