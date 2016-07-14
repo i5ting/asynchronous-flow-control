@@ -17,7 +17,7 @@ i5ting（桑世龙），空弦科技 CTO，StuQ 明星讲师，开源项目 Moaj
 
 曾就职在新浪、网秦，曾做过前端、后端、数据分析、移动端负责人、做过首席架构师、技术总监，全栈技术实践者，目前主要关注技术架构和团队梯队建设方向。
 
-![I5ting](i5ting.jpg)
+![I5ting](images/i5ting.jpg)
 
 
 # > > > > 这次分享的主题《深入浅出js（Node.js）异步流程控制》，为什么要从下一代测试框架ava开始呢？
@@ -302,4 +302,4 @@ dao层使用promise
 
 # 联系我
 
-![Sang](sang.jpg)
+![Sang](images/sang.jpg)
