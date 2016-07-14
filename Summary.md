@@ -13,12 +13,11 @@ InfoQ 前端之巅分享专业《深入浅出js（Node.js）异步流程控制�
 
 ## 个人介绍
 
-i5ting（江湖人称狼叔），空弦科技 CTO，StuQ 明星讲师，开源项目 Moajs 作者，Node.js 技术布道者，即将出版《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》
+i5ting（桑世龙），空弦科技 CTO，StuQ 明星讲师，开源项目 Moajs 作者，Node.js 技术布道者，即将出版《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》
 
 曾就职在新浪、网秦，曾做过前端、后端、数据分析、移动端负责人、做过首席架构师、技术总监，全栈技术实践者，目前主要关注技术架构和团队梯队建设方向。
 
 ![I5ting](i5ting.jpg)
-
 
 
 # > > > > 这次分享的主题《深入浅出js（Node.js）异步流程控制》，为什么要从下一代测试框架ava开始呢？
@@ -236,34 +235,9 @@ hello end a2
 hello end a1
 ```
 
+异常处理
 
-> > > > 总结
-在浏览器端，目前只有 Firefox 27 和 Chrome 39 以上的版本才支持 Generator，Node.js里还好，0.12之后就可以，而Async函数[Chrome 52. v8 5.1已经支持async函数](https://github.com/nodejs/CTC/issues/7)，更加蛋疼。。。那么，我们就不学了么？ 
-
-
-看一下我们要聊聊几种模式？
-
-- 1）同步
-- 2）callback
-- 3）promise
-- 4）generator
-- 5）async function
-
-
-
-
-- 从下一代测试框架ava开始
-- co引出的血案
-  - generator/yield
-  - co源码解析
-  - convert or compose
-- yieldable 5种
-- async/await
-- 推导出学习重点
-
-## 异常处理
-
-Node.js里关于异常处理有一个约定，即同步代码采用try/catch，非同步代码采用error-first方式。对于async函数俩说，它的await语句是同步执行的，所以最正常的流程处理是采用try/catch语句捕获。
+Node.js里关于异常处理有一个约定，即同步代码采用try/catch，非同步代码采用error-first方式。对于async函数俩说，它的await语句是同步执行的，所以最正常的流程处理是采用try/catch语句捕获，和generator/yield是一样的。
 
 ```
 try {
@@ -278,7 +252,35 @@ try {
 - then(onFulfilled, onRejected)里的onRejected
 - catch
 
-## 实践
+async函数总结
+
+- async函数语义上非常好
+- async不需要执行器，它本身具备执行能力，不像generator
+- async函数的异常处理采用try/catch和promise的错误处理，非常强大
+- await接Promise，Promise自身就足够应对所有流程了
+- await释放Promise的组合能力，外加Promise的then，基本无敌
+
+
+> > > > 总结
+在浏览器端，目前只有 Firefox 27 和 Chrome 39 以上的版本才支持 Generator，Node.js里还好，0.12之后就可以，而Async函数[Chrome 52. v8 5.1已经支持async函数](https://github.com/nodejs/CTC/issues/7)，更加蛋疼。。。那么，我们就不学了么？ 
+
+
+> > > > 推导出学习重点
+
+![All](all.png)
+
+- async函数是趋势，如果[Chrome 52. v8 5.1已经支持async函数](https://github.com/nodejs/CTC/issues/7)了，Node.js支持还会远么？
+- async和generator函数里都支持promise，所以promise是必须会的
+- generator和yield异常强大，不过不会成为主流，所以学会基本用法和promise就好了，没必要所有的都必须会。
+- co作为generator执行器是不错的，它更好的是当做Promise 包装器，通过generator支持yieldable，最后返回Promise，是不是有点无耻？
+
+结论：Promise是必须会的，那你为啥不顺势而为呢？
+
+推荐：使用async函数 + Promise组合
+
+![Suggest](suggest.png)
+
+实践
 
 - promise更容易做promisefyAll
 - async函数无法批量操作
@@ -295,28 +297,6 @@ dao层使用promise
 
 而service层一般是多个model组合操作，多模型操作就可以拆分成多个小的操作，然后使用await来组合，看起来会更加清晰，另外对需求应变也是非常容易的。
 
-## 总结
-
-- async函数语义上非常好
-- async不需要执行器，它本身具备执行能力，不像generator
-- async函数的异常处理采用try/catch和promise的错误处理，非常强大
-- await接Promise，Promise自身就足够应对所有流程了
-- await释放Promise的组合能力，外加Promise的then，基本无敌
-
-# 推导出学习重点
-
-![All](all.png)
-
-- async函数是趋势，如果[Chrome 52. v8 5.1已经支持async函数](https://github.com/nodejs/CTC/issues/7)了，Node.js支持还会远么？
-- async和generator函数里都支持promise，所以promise是必须会的
-- generator和yield异常强大，不过不会成为主流，所以学会基本用法和promise就好了，没必要所有的都必须会。
-- co作为generator执行器是不错的，它更好的是当做Promise 包装器，通过generator支持yieldable，最后返回Promise，是不是有点无耻？
-
-结论：Promise是必须会的，那你为啥不顺势而为呢？
-
-推荐：使用async函数 + Promise组合
-
-![Suggest](suggest.png)
 
 谢谢大家~
 
