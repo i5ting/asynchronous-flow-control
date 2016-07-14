@@ -257,6 +257,7 @@ await
 
 - await + async函数
 - await + Promise
+- await + co（co会返回Promise，这样可以Yieldable，但难度较大，适合老手）
 
 
 ```
