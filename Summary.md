@@ -328,6 +328,12 @@ es6的generator本意是为了计算而设计的迭代器，但tj觉得它可以
 
 存在即合理，那么我们就看看这“血案”吧。
 
+- 学习es6的generator
+- 了解es6的迭代器和迭代器相关的2中协议，了解for-of
+- 了解co和co的2种用法，源码
+- 了解yieldable 5种（包括不常用thunk）
+- 如果是koa，还需要了解convert和compose
+
 ## yieldable 5种
 
 yieldable本来是没有这个词的，因为在generator里可以是yield关键词，而yield后面接的有6种可能，故而把这些可以yield接的方式成为yieldable，即可以yield接的。
