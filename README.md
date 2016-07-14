@@ -1228,7 +1228,6 @@ gen1.next(); // resumes execution at line (A), then prints 2
 
 如果有多个yield呢？无穷无尽的next。。。
 
-
 于是tj就写[co](https://github.com/tj/co)这个著名的generator执行器，co目前已经是v4了，彻底的面向Promise了，个中曲折也是够八卦的了。
 
 ## co
@@ -1811,3 +1810,5 @@ dao层使用promise
 结论：Promise是必须会的，那你为啥不顺势而为呢？
 
 对于新增的特性，可以适当的学习和使用，比如文中AVA测试框架，比如Koa 2.x，更多请关注即将出版的《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》，如果喜欢在线视频的，也可以看看StuQ的Koa课程，微信里搜stuq公众号，回复koa即可。
+
+
