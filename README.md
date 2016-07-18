@@ -69,6 +69,25 @@ tj曾说：“如果他现在重写mocha，也会写成ava这样”
 - generator
 - async function
 
+举几个例子：
+
+```
+test('synchronization', t => {})
+test.cb('callback', t => {})
+test('promise', t => {})
+test('generator function',  function * (t) {})
+test('async function', async t => {})
+```
+
+大家了解这几种写法的区别么？
+
+总结一下就是：
+
+- test和test.cb是两种：同步和callback处理。
+- 在test里，第二个参数有3种写法，普通函数、Generator函数和Async函数。
+
+它们就是我们的主角，几乎所有的流程控制都在里面了。看一个模块或者框架，如果能这样比较，就非常容易看到它们的本质，一般都是写的人比用的人精，但用的人也可以变成写的人，是不是？
+
 ## 准备
 
 ```
