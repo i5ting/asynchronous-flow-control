@@ -1836,7 +1836,7 @@ dao层使用promise
 
 我整理了一张图，更直观一些。
 
-![All](all.png)
+![All](images/all.png)
 
 - 红色代表Promise，是使用最多的，无论async还是generator都可用
 - 蓝色是Generator，过度货
@@ -1846,7 +1846,7 @@ dao层使用promise
 
 **推荐**：使用Async函数 + Promise组合，如下图所示。
 
-![Suggest](suggest.png)
+![Suggest](images/suggest.png)
 
 **实践**
 
