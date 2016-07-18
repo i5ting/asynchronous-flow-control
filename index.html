@@ -1,0 +1,1907 @@
+
+	    <html>
+	      <head>
+				  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	        <title>README</title>
+					
+					<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+			
+				  <style>
+					pre {
+					    counter-reset: line-numbering;
+					    border: solid 1px #d9d9d9;
+					    border-radius: 0;
+					    background: #fff;
+					    padding: 0;
+					    line-height: 23px;
+					    margin-bottom: 30px;
+					    white-space: pre;
+					    overflow-x: auto;
+					    word-break: inherit;
+					    word-wrap: inherit;
+					}
+
+					pre a::before {
+					  content: counter(line-numbering);
+					  counter-increment: line-numbering;
+					  padding-right: 1em; /* space after numbers */
+					  width: 25px;
+					  text-align: right;
+					  opacity: 0.7;
+					  display: inline-block;
+					  color: #aaa;
+					  background: #eee;
+					  margin-right: 16px;
+					  padding: 2px 10px;
+					  font-size: 13px;
+					  -webkit-touch-callout: none;
+					  -webkit-user-select: none;
+					  -khtml-user-select: none;
+					  -moz-user-select: none;
+					  -ms-user-select: none;
+					  user-select: none;
+					}
+
+					pre a:first-of-type::before {
+					  padding-top: 10px;
+					}
+
+					pre a:last-of-type::before {
+					  padding-bottom: 10px;
+					}
+
+					pre a:only-of-type::before {
+					  padding: 10px;
+					}
+			
+					.highlight { background-color: #ffffcc } /* RIGHT */
+					</style>
+	      </head>
+	      <body>
+				  <div>
+							<div style='width:25%;'>
+									<ul id="tree" class="ztree" style='width:100%'>
+		
+									</ul>
+							</div>
+			        <div id='readme' style='width:70%;margin-left:20%;'>
+			          	<article class='markdown-body'>
+			            	<style>.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f0f0f0; }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #40a070 } /* Literal.Number.Bin */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+<h1>asynchronous-flow-control</h1>
+
+<p>《深入浅出js（Node.js）异步流程控制》</p>
+
+<ul>
+<li><a href="https://github.com/i5ting/asynchronous-flow-control/blob/master/31.md">InfoQ 前端之巅分享 精简版</a></li>
+</ul>
+
+<h2>摘要</h2>
+
+<p>目前在js流程控制领域越来越乱，各种派系。。。比如promise，generator，async函数，各种混战，在百花齐放的今天，作为前端或Node.js沾边工程师或全栈工程师，你知道该学哪种么？</p>
+
+<ul>
+<li>从下一代测试框架ava说起</li>
+<li>流程控制发展的前世今生概览</li>
+<li>从co引出的血案，到yieldable 5种，到aysnc函数，聊聊同步的流程控制</li>
+<li>最后推导一下学习重点、未来趋势</li>
+</ul>
+
+<h2>个人介绍</h2>
+
+<p>i5ting（桑世龙），空弦科技 CTO，StuQ 明星讲师，开源项目 Moajs 作者，Node.js 技术布道者，即将出版《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》</p>
+
+<p>曾就职在新浪、网秦，曾做过前端、后端、数据分析、移动端负责人、做过首席架构师、技术总监，全栈技术实践者，目前主要关注技术架构和团队梯队建设方向。</p>
+
+<p><img src="images/i5ting.jpg" alt="I5ting"></p>
+
+<h1>流程控制</h1>
+
+<ul>
+<li>从下一代测试框架ava开始</li>
+<li>co引出的血案
+
+<ul>
+<li>generator/yield</li>
+<li>co源码解析</li>
+<li>convert or compose</li>
+</ul></li>
+<li>yieldable 5种</li>
+<li>async/await</li>
+<li>推导出学习重点</li>
+</ul>
+
+<p>涵盖</p>
+
+<ul>
+<li>callback vs hell</li>
+<li>Node.js的error-first和EventEmitter</li>
+<li>thunk</li>
+<li>promise/a+</li>
+<li>generator/yield</li>
+<li>async/await</li>
+<li>异常处理</li>
+<li>各种xxx-fy</li>
+</ul>
+
+<h1>从下一代测试框架ava开始</h1>
+
+<p>讲流程控制，你扯到测试框架干什么？看似无关，但实际上测试框架才是对流程控制提供最全的最简洁的集成的，如果通用性的测试框架都解决不好流程控制问题，那么，这样的东西不用也罢。</p>
+
+<p>先简单的介绍一下：<a href="https://github.com/avajs/ava">AVA</a>是面向未来的测试运行器</p>
+
+<p>简单的说ava是mocha的替代品，</p>
+
+<ul>
+<li>es6语法支持更好，对aysnc/await有支持</li>
+<li>执行效率更高，使用io并发，就必须保证测试的原子性</li>
+<li>语义上更简单，集众家之长</li>
+</ul>
+
+<p>虽然 JavaScript 是单线程，但在 Node.js 里由于其异步的特性使得 IO 可以并行。AVA 利用这个优点让你的测试可以并发执行，这对于 IO 繁重的测试特别有用。另外，测试文件可以在不同的进程里并行运行，让每一个测试文件可以获得更好的性能和独立的环境。在 Pageres 项目中从 Mocha切换 到 AVA 让测试时间从 31 秒下降到 11 秒。测试并发执行强制你写原子测试，意味着测试不需要依赖全局状态或者其他测试的状态，这是一件非常好的事情。</p>
+
+<p>tj曾说：“如果他现在重写mocha，也会写成ava这样”</p>
+
+<p>闲言少叙</p>
+
+<ul>
+<li>同步</li>
+<li>callback</li>
+<li>promise</li>
+<li>generator</li>
+<li>async function</li>
+</ul>
+
+<h2>准备</h2>
+<div class="highlight"><pre><span class="nv">$ </span>npm init
+<span class="nv">$ </span>npm i -D ava
+<span class="nv">$ </span>npm i -D co-exec
+</pre></div>
+<h2>测试</h2>
+
+<h3>同步</h3>
+
+<p>js语言里除了ajax、setTimeout等大部分都是同步，写同步代码是一种幸福，稍后你就懂了</p>
+
+<p>1.js</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">test</span> <span class="nn">from</span> <span class="s">&#39;ava&#39;</span><span class="p">;</span>
+
+<span class="n">test</span><span class="p">(</span><span class="s">&#39;synchronization&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="n">const</span> <span class="n">a</span> <span class="o">=</span> <span class="o">/</span><span class="n">foo</span><span class="o">/</span><span class="p">;</span>
+  <span class="n">const</span> <span class="n">b</span> <span class="o">=</span> <span class="s">&#39;bar&#39;</span><span class="p">;</span>
+  <span class="n">const</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#39;baz&#39;</span><span class="p">;</span>
+  <span class="n">t</span><span class="o">.</span><span class="n">false</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">||</span> <span class="n">b</span> <span class="o">===</span> <span class="n">c</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+<h3>异步</h3>
+
+<p>但是我们习惯回调，无论事件还是ajax，都是异步的。另外Node.js里又为了性能而异步，即所谓的天生异步，每个api都是异步的。</p>
+
+<p>以Node.js为例</p>
+
+<ul>
+<li>error-first callback（错误优先的回调机制）</li>
+<li>EventEmitter （事件发射机制）</li>
+</ul>
+
+<p>总结，callback是用的最多的，是绝大部分的api遵守的约定，而EventEmitter是辅助机制，通过继承EventEmitter，来解耦业务逻辑。</p>
+
+<p>2.js</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">test</span> <span class="nn">from</span> <span class="s">&#39;ava&#39;</span><span class="p">;</span>
+<span class="n">const</span> <span class="k">exec</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&#39;child_process&#39;</span><span class="p">)</span><span class="o">.</span><span class="k">exec</span>
+
+<span class="n">test</span><span class="o">.</span><span class="n">cb</span><span class="p">(</span><span class="s">&#39;error-first callback with setTimeout&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="n">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="n">t</span><span class="o">.</span><span class="k">pass</span><span class="p">();</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">end</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="n">test</span><span class="o">.</span><span class="n">cb</span><span class="p">(</span><span class="s">&#39;error-first callback with exec&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">exec</span><span class="p">(</span><span class="s">&#39;cat *.js bad_file | wc -l&#39;</span><span class="p">,</span>
+    <span class="n">function</span> <span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">t</span><span class="o">.</span><span class="k">pass</span><span class="p">();</span>
+      <span class="n">t</span><span class="o">.</span><span class="n">end</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+<h3>promise</h3>
+
+<blockquote>
+<p>为了让大家从回调的地狱中回到天堂，Promise你值得拥有</p>
+</blockquote>
+
+<p>Promise是一种令代码异步行为更加优雅的抽象，有了它，我们就可以像写同步代码一样去写异步代码。它是从Common JS规范分裂出来的，目前主流是<a href="https://promisesaplus.com">Promose/A+</a>规范。</p>
+
+<p>jQuery很早就引入了Promise的概念，主要是deffered和promise对象。而在Angularjs里也有类似的实现，叫$q，其实是promise库q的精简版。</p>
+
+<p>先看测试，后面会详细讲</p>
+
+<p>3.js</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">test</span> <span class="nn">from</span> <span class="s">&#39;ava&#39;</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">promise</span>
+<span class="n">test</span><span class="p">(</span><span class="s">&#39;promise&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">Promise</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">n</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="n">t</span><span class="o">.</span><span class="ow">is</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+<h3>generator</h3>
+
+<p>generator是es6的一个特性，本身是用于计算的，通过generator和yield写的代码看起来像同步的，主要是yield来处理同步的事儿，但yield又只能在generator里。</p>
+
+<p>在ava里是generator特别简单</p>
+
+<p>4.js</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">test</span> <span class="nn">from</span> <span class="s">&#39;ava&#39;</span><span class="p">;</span>
+
+<span class="n">var</span> <span class="k">exec</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&#39;co-exec&#39;</span><span class="p">);</span>
+
+<span class="n">test</span><span class="p">(</span><span class="s">&#39;generatorFn with exec()&#39;</span><span class="p">,</span> <span class="n">function</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">commit</span> <span class="o">=</span> <span class="k">yield</span> <span class="k">exec</span><span class="p">(</span><span class="s">&#39;ls -alt|grep .gitignore|wc -l&#39;</span><span class="p">);</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">true</span><span class="p">(</span><span class="n">commit</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+<h3>async function</h3>
+
+<p>generator执行的时候，需要先生成对象，然后next进行下一步。这样做起来还是比较麻烦，能不能不需要执行器啊？于是async函数就应运而生了。</p>
+
+<p>async函数es7 stage-3的特性，可惜差一点就进入到es7规范了。async函数里使用await可以做到和yield类似的效果，但await只能接promise对象。</p>
+
+<p>5.js</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">test</span> <span class="nn">from</span> <span class="s">&#39;ava&#39;</span><span class="p">;</span>
+
+<span class="n">test</span><span class="p">(</span><span class="s">&#39;async function&#39;</span><span class="p">,</span> <span class="n">async</span> <span class="n">t</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="n">const</span> <span class="n">bar</span> <span class="o">=</span> <span class="n">Promise</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="s">&#39;bar&#39;</span><span class="p">);</span>
+
+    <span class="n">t</span><span class="o">.</span><span class="ow">is</span><span class="p">(</span><span class="n">await</span> <span class="n">bar</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+<h2>执行</h2>
+<div class="highlight"><pre><span class="err">➜</span><span class="w">  </span><span class="vg">asynchronous</span><span class="o">-</span><span class="vg">flow</span><span class="o">-</span><span class="vg">control</span><span class="w"> </span><span class="nl">git:</span><span class="p">(</span><span class="vg">master</span><span class="p">)</span><span class="w"> </span><span class="err">✗</span><span class="w"> </span><span class="vg">ava</span><span class="w"> </span><span class="o">-</span><span class="vg">v</span><span class="w"> </span><span class="o">*.</span><span class="vg">js</span>
+
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">1</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">synchronization</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">2</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">error</span><span class="o">-</span><span class="vg">first</span><span class="w"> </span><span class="vg">callback</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">exec</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">3</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">promise</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">4</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">generatorFn</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">exec</span><span class="p">()</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">5</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">async</span><span class="w"> </span><span class="vg">function</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">2</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">error</span><span class="o">-</span><span class="vg">first</span><span class="w"> </span><span class="vg">callback</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">setTimeout</span><span class="w"> </span><span class="p">(</span><span class="il">2</span><span class="vg">s</span><span class="p">)</span>
+
+<span class="w">  </span><span class="il">6</span><span class="w"> </span><span class="vg">tests</span><span class="w"> </span><span class="vg">passed</span><span class="w"> </span><span class="p">[</span><span class="il">09</span><span class="o">:</span><span class="il">48</span><span class="o">:</span><span class="il">27</span><span class="p">]</span>
+
+<span class="err">➜</span><span class="w">  </span><span class="vg">asynchronous</span><span class="o">-</span><span class="vg">flow</span><span class="o">-</span><span class="vg">control</span><span class="w"> </span><span class="nl">git:</span><span class="p">(</span><span class="vg">master</span><span class="p">)</span><span class="w"> </span><span class="err">✗</span><span class="w"> </span><span class="vg">ava</span><span class="w"> </span><span class="o">-</span><span class="vg">v</span><span class="w"> </span><span class="o">*.</span><span class="vg">js</span><span class="w"> </span><span class="o">-</span><span class="vg">s</span>
+
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">1</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">synchronization</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">2</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">error</span><span class="o">-</span><span class="vg">first</span><span class="w"> </span><span class="vg">callback</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">setTimeout</span><span class="w"> </span><span class="p">(</span><span class="il">2</span><span class="vg">s</span><span class="p">)</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">2</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">error</span><span class="o">-</span><span class="vg">first</span><span class="w"> </span><span class="vg">callback</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">exec</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">3</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">promise</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">4</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">generatorFn</span><span class="w"> </span><span class="vg">with</span><span class="w"> </span><span class="vg">exec</span><span class="p">()</span>
+<span class="w">  </span><span class="err">✔</span><span class="w"> </span><span class="il">5</span><span class="w"> </span><span class="err">›</span><span class="w"> </span><span class="vg">async</span><span class="w"> </span><span class="vg">function</span>
+
+<span class="w">  </span><span class="il">6</span><span class="w"> </span><span class="vg">tests</span><span class="w"> </span><span class="vg">passed</span><span class="w"> </span><span class="p">[</span><span class="il">09</span><span class="o">:</span><span class="il">48</span><span class="o">:</span><span class="il">35</span><span class="p">]</span>
+</pre></div>
+<p>说明</p>
+
+<ul>
+<li>第一个是并行的，所以顺序有点乱</li>
+<li>第二个是顺序执行 <code>-s</code></li>
+</ul>
+
+<h1>Promise</h1>
+
+<p>顺序执行的代码和错误有限的回调方式都是js引擎默认支持的，这部分大家会调用接口，无太多变化，而Promise是对callback的思考，或者说改良方案，目前使用非常普遍，这里详细讲解一下。</p>
+
+<h2>node里的Promise</h2>
+
+<p>promise最早是在commonjs社区提出来的，当时提出了很多规范。比较接受的是promise/A规范。后来人们在这个基础上。提出了promise/A+规范，也就是实际上的业内推行的规范。es6也是采用的这种规范。</p>
+
+<blockquote>
+<p>The Promise object is used for asynchronous computations. A Promise represents an operation that hasn&#39;t completed yet, but is expected in the future.</p>
+</blockquote>
+
+<p>Promise对象用于异步技术中。Promise意味着一个还没有完成的操作（许愿），但在未来会完成的（实现）。</p>
+
+<p><img src="images/promise-impl.png" alt=""></p>
+
+<p>在Node.js 0.12里实现9/11，在6.2和7实现100%，中间版本实现了10/11。所以Node.js对Promise的支持是非常好的，0.12之后的绝大部分版本都支持的不错。</p>
+
+<p>Promise 的最大优势是标准，各类异步工具库都认同，未来的 async/await 也基于它，用它封装 API 通用性强，用起来简单。</p>
+
+<p>要想知道node.js有哪些比较好的promise实现，最好的办法就是看一下最知名的bluebird库的<a href="http://bluebirdjs.com/docs/benchmarks.html">benchmark</a>里比较里哪些。</p>
+
+<ul>
+<li>async@1.5.0</li>
+<li>babel@5.8.29</li>
+<li>davy@1.0.1</li>
+<li>deferred@0.7.3</li>
+<li>kew@0.7.0</li>
+<li>lie@3.0.1</li>
+<li>neo-async@1.6.0</li>
+<li>optimist@0.6.1</li>
+<li>promise@7.0.4</li>
+<li>q@1.4.1</li>
+<li>rsvp@3.1.0</li>
+<li>streamline@1.0.7</li>
+<li>text-table@0.2.0</li>
+<li>vow@0.4.11</li>
+<li>when@3.7.4</li>
+</ul>
+
+<h2>Promise是什么？</h2>
+
+<blockquote>
+<p>A promise is an abstraction for asynchronous programming. It’s an object that proxies for the return value or the exception thrown by a function that has to do some asynchronous processing. — Kris Kowal on JSJ</p>
+</blockquote>
+
+<p>Promise表示一个异步操作的最终结果。与Promise最主要的交互方法是通过将函数传入它的then方法从而获取得Promise最终的值或Promise最终最拒绝（reject）的原因。</p>
+
+<ul>
+<li>递归，每个异步操作返回的都是promise对象</li>
+<li>状态机：三种状态转换，只在promise对象内部可以控制，外部不能改变状态</li>
+<li>全局异常处理</li>
+</ul>
+
+<p>定义</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="vg">do</span><span class="w"> </span><span class="vg">a</span><span class="w"> </span><span class="vg">thing</span><span class="p">,</span><span class="w"> </span><span class="vg">possibly</span><span class="w"> </span><span class="vg">async</span><span class="p">,</span><span class="w"> </span><span class="vg">then</span><span class="err">…</span>
+
+<span class="w">  </span><span class="vg">if</span><span class="w"> </span><span class="p">(</span><span class="o">/*</span><span class="w"> </span><span class="vg">everything</span><span class="w"> </span><span class="vg">turned</span><span class="w"> </span><span class="vg">out</span><span class="w"> </span><span class="vg">fine</span><span class="w"> </span><span class="o">*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">resolve</span><span class="p">(</span><span class="s2">&quot;Stuff worked!&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="vg">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">reject</span><span class="p">(</span><span class="vg">Error</span><span class="p">(</span><span class="s2">&quot;It broke&quot;</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+<h2>术语</h2>
+
+<ul>
+<li>Promises  Promise规范自身</li>
+<li>promise对象 promise对象指的是 Promise 实例对象</li>
+<li>ES6 Promises  如果想明确表示使用 ECMAScript 6th Edition 的话，可以使用ES6作为前缀（prefix）</li>
+<li>Promises/A+   Promises/A+。 这是ES6 Promises的前身，是一个社区规范，它和 ES6 Promises 有很多共通的内容。</li>
+<li>Thenable  类Promise对象。 拥有名为.then方法的对象。</li>
+</ul>
+
+<h2>hello promise</h2>
+
+<p>给出一个最简单的读写文件的api实例，它是error-first风格的典型api</p>
+
+<p>async/promise/hello.js</p>
+<div class="highlight"><pre><span class="c1">// callbacks</span>
+<span class="k">var</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&quot;fs&quot;</span><span class="p">);</span>
+
+<span class="n">fs</span><span class="p">.</span><span class="n">readFile</span><span class="p">(&#39;.</span><span class="o">/</span><span class="k">package</span><span class="p">.</span><span class="n">json</span><span class="p">&#39;,</span> <span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="n">throw</span> <span class="n">err</span><span class="p">;</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">toString</span><span class="p">());</span>
+<span class="p">});</span>
+</pre></div>
+<p>下面，我们把它变成promise的简单示例</p>
+
+<p>async/promise/hellopromise.js</p>
+<div class="highlight"><pre><span class="c1">// callbacks to promise</span>
+<span class="k">var</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&quot;fs&quot;</span><span class="p">);</span>
+
+<span class="k">function</span> <span class="n">hello</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">Promise</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">resolve</span><span class="p">,</span> <span class="n">reject</span><span class="p">){</span>
+    <span class="n">fs</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">reject</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">resolve</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">toString</span><span class="p">())</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="n">hello</span><span class="p">(&#39;.</span><span class="o">/</span><span class="k">package</span><span class="p">.</span><span class="n">json</span><span class="p">&#39;).</span><span class="n">then</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">data</span><span class="p">){</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(&#39;</span><span class="n">promise</span> <span class="n">result</span> <span class="o">=</span> <span class="p">&#39;</span> <span class="o">+</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">}).</span><span class="n">catch</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>这二段代码执行效果是一模一样的，唯一的差别是前一种写法是Node.js默认api写法，以回调为主，而后一种写法，通过返回promise对象，在fs.readFile的回调函数，将结果延后处理。</p>
+
+<p>这就是最简单的promise实现</p>
+
+<p>形式</p>
+<div class="highlight"><pre><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+
+<span class="p">})</span>
+</pre></div>
+<p>参数</p>
+
+<ul>
+<li>resolve 解决，进入到下一个流程</li>
+<li>reject  拒绝，跳转到捕获异常流程</li>
+</ul>
+
+<p>调用</p>
+<div class="highlight"><pre><span class="vg">hello</span><span class="p">(</span><span class="c1">&#39;./package.json&#39;).then(function(data){</span>
+
+<span class="p">})</span>
+</pre></div>
+<p>全局处理异常</p>
+<div class="highlight"><pre><span class="vg">hello</span><span class="p">(</span><span class="c1">&#39;./package.json&#39;).then(function(data){</span>
+
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">})</span>
+</pre></div>
+<p>结论</p>
+
+<blockquote>
+<p>Promise核心：将callback里的结果延后到then函数里处理或交给全局异常处理</p>
+</blockquote>
+
+<h2>封装api的过程</h2>
+
+<p>还是以上面的fs.readFile为例</p>
+<div class="highlight"><pre><span class="vg">fs</span><span class="o">.</span><span class="vg">readFile</span><span class="p">(</span><span class="c1">&#39;./package.json&#39;, (err, data) =&gt; {</span>
+<span class="w">  </span><span class="vg">if</span><span class="w"> </span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="vg">throw</span><span class="w"> </span><span class="vg">err</span><span class="p">;</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">data</span><span class="o">.</span><span class="vg">toString</span><span class="p">());</span>
+<span class="p">});</span>
+</pre></div>
+<p>参数处理：除了callback外，其他东西都放到新的函数的参数里</p>
+<div class="highlight"><pre><span class="vg">function</span><span class="w"> </span><span class="vg">hello</span><span class="w"> </span><span class="p">(</span><span class="vg">file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="o">...</span>
+<span class="p">}</span>
+</pre></div>
+<p>返回值处理：返回Promise实例对象</p>
+<div class="highlight"><pre><span class="vg">function</span><span class="w"> </span><span class="vg">hello</span><span class="w"> </span><span class="p">(</span><span class="vg">file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+<p>结果处理：通过resolve和reject重塑流程</p>
+<div class="highlight"><pre><span class="vg">function</span><span class="w"> </span><span class="vg">hello</span><span class="w"> </span><span class="p">(</span><span class="vg">file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">fs</span><span class="o">.</span><span class="vg">readFile</span><span class="p">(</span><span class="vg">file</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="vg">err</span><span class="p">,</span><span class="w"> </span><span class="vg">data</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="vg">if</span><span class="w"> </span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="vg">reject</span><span class="p">(</span><span class="vg">err</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="vg">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="vg">resolve</span><span class="p">(</span><span class="vg">data</span><span class="o">.</span><span class="vg">toString</span><span class="p">())</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+<p>我们知道所有的Node.js都是error-first的callback形式，通过上面的例子，我们可以肯定是所有的Node.js的API都可以这样来处理，只要它们遵守Promise规范即可。</p>
+
+<h2>每个函数的返回值都是Promise对象</h2>
+
+<p>为了简化编程复杂性，每个函数的返回值都是Promise对象，这样的约定可以大大的简化编程的复杂。</p>
+
+<p>它可以理解为是递归的变种思想应用，只要是Promise对象，就可以控制状态，就可以支持then方法，参数还是Promise对象，这样就可以无限个Promise对象链接在一起。</p>
+<div class="highlight"><pre><span class="c1">// callbacks to promise</span>
+<span class="k">var</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&quot;fs&quot;</span><span class="p">);</span>
+
+<span class="k">function</span> <span class="n">hello</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">Promise</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">resolve</span><span class="p">,</span> <span class="n">reject</span><span class="p">){</span>
+    <span class="n">fs</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">reject</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">resolve</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">toString</span><span class="p">())</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">world</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">Promise</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">resolve</span><span class="p">,</span> <span class="n">reject</span><span class="p">){</span>
+    <span class="n">fs</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">reject</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">resolve</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">toString</span><span class="p">())</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">){</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">Promise</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">resolve</span><span class="p">,</span> <span class="n">reject</span><span class="p">){</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(&#39;</span><span class="n">promise</span> <span class="n">result</span> <span class="o">=</span> <span class="p">&#39;</span> <span class="o">+</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">resolve</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="n">hello</span><span class="p">(&#39;.</span><span class="o">/</span><span class="k">package</span><span class="p">.</span><span class="n">json</span><span class="p">&#39;).</span><span class="n">then</span><span class="p">(</span><span class="n">log</span><span class="p">).</span><span class="n">then</span><span class="p">(</span><span class="k">function</span><span class="p">(){</span>
+  <span class="k">return</span> <span class="n">hello</span><span class="p">(&#39;.</span><span class="o">/</span><span class="n">each</span><span class="p">.</span><span class="n">js</span><span class="p">&#39;).</span><span class="n">then</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+<span class="p">}).</span><span class="n">catch</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>这里可以看出</p>
+
+<ul>
+<li><code>hello</code>、<code>world</code>、<code>log</code> 返回单个Promise对象</li>
+<li><code>hello(&#39;./each.js&#39;).then(log)</code> 返回流程链</li>
+</ul>
+
+<p>无论是单个，还是流程链的返回值都是Promise对象，那么它就是一样的。</p>
+
+<h2>链式的thenable</h2>
+
+<p>每个promose对象都有then方法，也就是说，then方法是定义在原型对象Promise.prototype上的。它的作用是为Promise实例添加状态改变时的回调函数。</p>
+
+<p>一般实现，类似于</p>
+<div class="highlight"><pre><span class="vg">Promise</span><span class="o">.</span><span class="vg">prototype</span><span class="o">.</span><span class="vg">then</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">function</span><span class="p">(</span><span class="vg">sucess</span><span class="p">,</span><span class="w"> </span><span class="vg">fail</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">this</span><span class="o">.</span><span class="vg">done</span><span class="p">(</span><span class="vg">sucess</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">this</span><span class="o">.</span><span class="vg">fail</span><span class="p">(</span><span class="vg">fail</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">return</span><span class="w"> </span><span class="vg">this</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<p>它的返回值是this，这就是为什么then可以链式操作的原因。</p>
+
+<p>then的2个参数</p>
+
+<ul>
+<li>sucess是fulfilled状态的回调函数</li>
+<li>fail是rejected状态的回调函数</li>
+</ul>
+
+<p>一般都是穿sucess回调函数即可。</p>
+
+<h2>状态转换</h2>
+
+<p>一个Promise必须处在其中之一的状态：pending, fulfilled 或 rejected.</p>
+
+<ul>
+<li>pending: 初始状态, 非 fulfilled 或 rejected.</li>
+<li>fulfilled: 完成（成功）的操作.</li>
+<li>rejected: 拒绝（失败）的操作.</li>
+</ul>
+
+<p>这里从pending状态可以切换到fulfill状态，也可以从pengding切换到reject状态，这个状态切换不可逆，且fulfilled和reject两个状态之间是不能互相切换的。</p>
+
+<p>一定要注意的是，只有异步操作的结果，才可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。</p>
+
+<p>Promise对象可以理解为一个乐高积木，它对下一个流程，传送状态和具体结果。</p>
+
+<p><img src="images/promise.png" alt=""></p>
+
+<p>如果是pending状态,则promise：</p>
+
+<ul>
+<li>可以转换到fulfilled或rejected状态。</li>
+</ul>
+
+<p>如果是fulfilled状态,则promise：</p>
+
+<ul>
+<li>不能转换成任何其它状态。</li>
+<li>必须有一个值，且这个值不能被改变。</li>
+</ul>
+
+<p>如果是rejected状态,则promise可以：</p>
+
+<ul>
+<li>不能转换成任何其它状态。</li>
+<li>必须有一个原因，且这个值不能被改变。</li>
+</ul>
+
+<p>”值不能被改变”指的是其identity不能被改变，而不是指其成员内容不能被改变。</p>
+
+<h2>reject和resove流程再造</h2>
+
+<p>前面讲了，每个函数的返回值都是Promise对象，每个Promise对象都有then方法，这是它可以递归思路的解决办法。</p>
+
+<p>那么问题来了，如何在连续的操作步骤里，完成流程再造呢？这其实才是异步流程控制最核心的问题。</p>
+
+<p>我们知道Promise的使用形式如下：</p>
+<div class="highlight"><pre><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+
+<span class="p">})</span>
+</pre></div>
+<p>下面仍然使用fs的例子，见reflow.js</p>
+
+<p><code>way 1</code>：简单模式</p>
+<div class="highlight"><pre><span class="vg">hello</span><span class="p">(</span><span class="c1">&#39;./package.json&#39;).then(function(data){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;way 1:\n&#39;)</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;promise result = &#39; + data)</span>
+<span class="w">    </span><span class="vg">resolve</span><span class="p">(</span><span class="vg">data</span><span class="p">)</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">data</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">resolve</span><span class="p">(</span><span class="c1">&#39;1&#39;)</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">data</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">data</span><span class="p">)</span>
+
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">reject</span><span class="p">(</span><span class="vg">new</span><span class="w"> </span><span class="vg">Error</span><span class="p">(</span><span class="c1">&#39;reject with custom err&#39;))</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>这是一个常规的例子，就是在then里面的promise对象里，通过resolve将流程进行到下一步，在reject的时候抛出异常。这里面的每一个promise对象里都可以这样做，那么是不是这个操作流程就是可控的了？</p>
+
+<p><code>way 2</code>：嵌套模式</p>
+<div class="highlight"><pre><span class="vg">hello</span><span class="p">(</span><span class="c1">&#39;./package.json&#39;).then(function(data){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;\n\nway 2:\n&#39;)</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;promise result = &#39; + data)</span>
+<span class="w">    </span><span class="vg">resolve</span><span class="p">(</span><span class="vg">data</span><span class="p">)</span>
+<span class="w">  </span><span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">data</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">      </span><span class="vg">resolve</span><span class="p">(</span><span class="c1">&#39;1&#39;)</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">data</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">data</span><span class="p">)</span>
+
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">reject</span><span class="p">(</span><span class="vg">new</span><span class="w"> </span><span class="vg">Error</span><span class="p">(</span><span class="c1">&#39;reject with custom err&#39;))</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>这里的做法是，把第一个then和第二个then合并到一个流程里。这样做的好处是，这个流程也可以考虑单独处理异常。为了某些粒度更新的异步处理，是非常有好处的。</p>
+
+<p><code>way 3</code>：嵌套模式的refact清晰版</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">step1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">function</span><span class="p">(</span><span class="vg">data</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;\n\nway 3:\n&#39;)</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;promise result = &#39; + data)</span>
+<span class="w">    </span><span class="vg">resolve</span><span class="p">(</span><span class="vg">data</span><span class="p">)</span>
+<span class="w">  </span><span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">data</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">      </span><span class="vg">resolve</span><span class="p">(</span><span class="c1">&#39;1&#39;)</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="vg">var</span><span class="w"> </span><span class="vg">step2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">function</span><span class="p">(</span><span class="vg">data</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">data</span><span class="p">)</span>
+
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">reject</span><span class="p">(</span><span class="vg">new</span><span class="w"> </span><span class="vg">Error</span><span class="p">(</span><span class="c1">&#39;reject with custom err&#39;))</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="vg">hello</span><span class="p">(</span><span class="c1">&#39;./package.json&#39;).then(step1).then(step2).catch(function(err) {</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>把每个独立的操作抽成函数，然后函数的返回值是Promise对象，这样就可以在真正的流程链里随意组织了。</p>
+
+<p>它们就好比是积木一样，可以让逻辑更清楚，让代码更具可读性和可维护性。如果再极端点，每个操作都放到独立文件里，变成模块，是不是更爽呢？  </p>
+
+<p><code>way 4</code>：final版，把每个独立的操作放到独立文件里，变成模块</p>
+
+<p>原理: 使用<code>require-directory</code></p>
+
+<p>根据commonjs规范，require只能引用某一个文件，当一个文件夹里有很多文件，每一个都去require是很麻烦的，<code>require-directory</code>就是一个便捷模块，可以把某个文件夹内的多个文件挂载到一个对象。</p>
+
+<p>原理，递归遍历文件，读取具体文件，如果是遵循commonjs规范的模块，就挂载在它的返回值对象上。</p>
+
+<p>比如reflow/tasks/index.js</p>
+<div class="highlight"><pre><span class="n">var</span> <span class="n">requireDirectory</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="c">&#39;require-directory&#39;);</span>
+<span class="n">module</span><span class="p">.</span><span class="n">exports</span> <span class="o">=</span> <span class="n">requireDirectory</span><span class="p">(</span><span class="n">module</span><span class="p">)</span><span class="err">;</span>
+</pre></div>
+<p>这样<code>reflow/tasks</code>下的所有遵循commonjs规范的模块都可以挂载</p>
+
+<p>reflow/tasks/hello.js</p>
+<div class="highlight"><pre><span class="n">var</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&quot;fs&quot;</span><span class="p">)</span><span class="err">;</span>
+
+<span class="n">module</span><span class="p">.</span><span class="n">exports</span> <span class="o">=</span> <span class="k">function</span> <span class="nf">hello</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">Promise</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">resolve</span><span class="p">,</span> <span class="n">reject</span><span class="p">){</span>
+    <span class="n">fs</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">reject</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="err">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">resolve</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">toString</span><span class="p">())</span>
+        <span class="p">}</span>
+    <span class="p">})</span><span class="err">;</span>
+  <span class="p">})</span><span class="err">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>这其实和之前的定义是一模一样的，唯一差别就是变成了模块，使用了module.exports来导出。</p>
+
+<p>其他的step1和step2以此类推，下面我们卡一下具体调用的代码</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;./tasks&#39;)</span>
+
+<span class="vg">tasks</span><span class="o">.</span><span class="vg">hello</span><span class="p">(</span><span class="c1">&#39;./package.json&#39;).then(tasks.step1).then(tasks.step2).catch(function(err) {</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>给出具体的流程图</p>
+
+<p><img src="images/promise-flow.png" alt=""></p>
+
+<p>首先<code>require(&#39;./tasks&#39;)</code>获得tasks目录下的所有操作任务定义，然后在下面的Promise流程里处理，可以看出定义和实现分离，让代码有更好的可读性。</p>
+
+<p>如果，这时我们恰好需要调整step1和step2的顺序，是不是非常的简单？</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;./tasks&#39;)</span>
+
+<span class="vg">tasks</span><span class="o">.</span><span class="vg">hello</span><span class="p">(</span><span class="c1">&#39;./package.json&#39;).then(tasks.step2).then(tasks.step1).catch(function(err) {</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>更多好处，自行体会吧，这里就不做更多解释了。</p>
+
+<h2>错误处理</h2>
+
+<p>常用的处理方式是全局处理，即所有的异步操作都由一个catch来处理</p>
+<div class="highlight"><pre><span class="vg">promise</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;Got data!&#39;, result);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;Error occurred!&#39;, error);</span>
+<span class="p">});</span>
+</pre></div>
+<p>当然，then方法的第二个参数也是可以的</p>
+<div class="highlight"><pre><span class="vg">promise</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;Got data!&#39;, result);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">undefined</span><span class="p">,</span><span class="w"> </span><span class="vg">function</span><span class="p">(</span><span class="vg">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;Error occurred!&#39;, error);</span>
+<span class="p">});</span>
+</pre></div>
+<p>如果有多个then配对的reject函数呢？是不是可以更加灵活？这其实就要取决于你的业务复杂程度里。</p>
+
+<p>错误处理最简单的办法是在promise里使用try/catch的语句。在try/catch块中，它可能去捕获异常，并显示处理它：（TODO: 重写个更简单例子）</p>
+<div class="highlight"><pre><span class="vg">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">throw</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Error</span><span class="p">(</span><span class="c1">&#39;never will know this happened&#39;)</span>
+<span class="p">}</span><span class="w"> </span><span class="vg">catch</span><span class="w"> </span><span class="p">(</span><span class="vg">e</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+<p>在promises里可以这样写</p>
+<div class="highlight"><pre><span class="vg">readFile</span><span class="p">()</span>
+<span class="w">  </span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">throw</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Error</span><span class="p">(</span><span class="c1">&#39;never will know this happened&#39;)</span>
+<span class="w">  </span><span class="p">})</span>
+</pre></div>
+<p>为了打印errors，这里以简单的.then(null, onRejected)语句为例</p>
+<div class="highlight"><pre><span class="vg">readFile</span><span class="p">()</span>
+<span class="w">  </span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">throw</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Error</span><span class="p">(</span><span class="c1">&#39;now I know this happened&#39;)</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">null</span><span class="p">,</span><span class="w"> </span><span class="vg">console</span><span class="o">.</span><span class="vg">error</span><span class="p">)</span>
+</pre></div>
+<p>类库包括一些暴露error的其他选项。比如Q就提供了done方法，可以再次跑出error异常的。</p>
+
+<p>链式写法很方便，可以随意组合，</p>
+
+<p>api/catch.js</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">resolve</span><span class="p">(</span><span class="c1">&#39;Success&#39;);</span>
+<span class="p">});</span>
+
+<span class="vg">p1</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">value</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;Success!&quot;</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">reject</span><span class="p">(</span><span class="c1">&#39;oh, no!&#39;);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">e</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;oh, no!&quot;</span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="vg">return</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">reject</span><span class="p">(</span><span class="c1">&#39;oh, no! 2&#39;);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;after a catch the chain is restored&#39;);</span>
+<span class="p">},</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;Not fired due to the catch&#39;);</span>
+<span class="p">});</span>
+</pre></div>
+<p>执行</p>
+<div class="highlight"><pre><span class="nv">$ </span>node api/catch.js
+Success
+oh, no!
+after a catch the chain is restored
+</pre></div>
+<p>api/catch2.js</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">resolve</span><span class="p">(</span><span class="c1">&#39;Success&#39;);</span>
+<span class="p">});</span>
+
+<span class="vg">p1</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">value</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;Success!&quot;</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">reject</span><span class="p">(</span><span class="c1">&#39;oh, no!&#39;);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">e</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s2">&quot;oh, no!&quot;</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">reject</span><span class="p">(</span><span class="c1">&#39;oh, no! 2&#39;);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;after a catch the chain is restored&#39;);</span>
+<span class="p">},</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;Not fired due to the catch&#39;);</span>
+<span class="p">});</span>
+</pre></div>
+<p>执行</p>
+<div class="highlight"><pre><span class="nv">$ </span>node api/catch2.js
+Success
+oh, no!
+Not fired due to the catch
+</pre></div>
+<h2>Node.js的promise库</h2>
+
+<p>Promise扩展类库除了实现了Promise中定义的规范之外，还增加了自己独自定义的功能。</p>
+
+<p>按字母排序</p>
+
+<table><thead>
+<tr>
+<th>package</th>
+<th>repo</th>
+<th>alias</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://www.npmjs.com/package/bluebird">bluebird</a></td>
+<td><a href="https://github.com/petkaantonov/bluebird">petkaantonov/bluebird</a></td>
+<td>bb</td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/es6-promise">es6-promise</a></td>
+<td><a href="https://github.com/jakearchibald/es6-promise">jakearchibald/es6-promise</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/es6-promise-polyfill">es6-promise-polyfill</a> [^1]</td>
+<td><a href="https://github.com/lahmatiy/es6-promise-polyfill">lahmatiy/es6-promise-polyfill</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/es6-promises">es6-promises</a></td>
+<td><a href="https://github.com/Octane/Promise">Octane/Promise</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/lie">lie</a></td>
+<td><a href="https://github.com/calvinmetcalf/lie">calvinmetcalf/lie</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/native-promise-only">native-promise-only</a></td>
+<td><a href="https://github.com/getify/native-promise-only">getify/native-promise-only</a></td>
+<td>npo</td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/promiscuous">promiscuous</a></td>
+<td><a href="https://github.com/RubenVerborgh/promiscuous">RubenVerborgh/promiscuous</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/promise">promise</a></td>
+<td><a href="https://github.com/then/promise">then/promise</a></td>
+<td>then</td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/promiz">promiz</a></td>
+<td><a href="https://github.com/Zolmeister/promiz">Zolmeister/promiz</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/q">q</a></td>
+<td><a href="https://github.com/kriskowal/q">kriskowal/q</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/rsvp">rsvp</a></td>
+<td><a href="https://github.com/tildeio/rsvp.js">tildeio/rsvp.js</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/vow">vow</a></td>
+<td><a href="https://github.com/dfilatov/vow">dfilatov/vow</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/when">when</a></td>
+<td><a href="https://github.com/cujojs/when">cujojs/when</a></td>
+<td>w</td>
+</tr>
+</tbody></table>
+
+<p>[^1]: based on es6-promise, so excluded from the registery by default</p>
+
+<p>Promise扩展类库数量非常的多，我们只介绍其中两个比较有名的类库。</p>
+
+<ul>
+<li><a href="https://github.com/kriskowal/q">kriskowal/q</a></li>
+</ul>
+
+<p>类库 Q 实现了 Promises 和 Deferreds 等规范。 它自2009年开始开发，还提供了面向Node.js的文件IO API Q-IO 等， 是一个在很多场景下都能用得到的类库。</p>
+
+<ul>
+<li><a href="https://github.com/petkaantonov/bluebird">petkaantonov/bluebird</a></li>
+</ul>
+
+<p>这个类库除了兼容 Promise 规范之外，还扩展了取消promise对象的运行，取得promise的运行进度，以及错误处理的扩展检测等非常丰富的功能，此外它在实现上还在性能问题下了很大的功夫。</p>
+
+<p>Q 和 Bluebird 这两个类库除了都能在浏览器里运行之外，充实的API reference也是其特征。由于Bluebird的性能比较好，所以我们一般用Bluebird的时候会比较多。</p>
+
+<p>Q等文档里详细介绍了Q的Deferred和jQuery里的Deferred有哪些异同，以及要怎么进行迁移 Coming from jQuery 等都进行了详细的说明。</p>
+
+<p>Bluebird的文档除了提供了使用Promise丰富的实现方式之外，还涉及到了在出现错误时的对应方法以及 Promise中的反模式 等内容。</p>
+
+<p>这两个类库的文档写得都很友好，即使我们不使用这两个类库，阅读一下它们的文档也具有一定的参考价值。</p>
+
+<h2>替换bluebird</h2>
+
+<blockquote>
+<p>tj: bluebird is MASSIVE, why not use v8&#39;s?</p>
+</blockquote>
+
+<p>bluebird是Node.js世界里性能最好的模块，api非常齐全，功能强大，是原生Promise外的不二选择。</p>
+
+<p>安装bluebird模块</p>
+<div class="highlight"><pre><span class="nv">$ </span>npm i -S bluebird
+</pre></div>
+<p>见代码<code>hellopromise-bb.js</code></p>
+<div class="highlight"><pre><span class="c1">// callbacks to promise</span>
+<span class="k">var</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&quot;fs&quot;</span><span class="p">);</span>
+<span class="k">var</span> <span class="n">Promise</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s">&quot;bluebird&quot;</span><span class="p">);</span>
+
+
+<span class="k">function</span> <span class="n">hello</span> <span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">Promise</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">resolve</span><span class="p">,</span> <span class="n">reject</span><span class="p">){</span>
+    <span class="n">fs</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">reject</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">resolve</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">toString</span><span class="p">())</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="n">hello</span><span class="p">(&#39;.</span><span class="o">/</span><span class="k">package</span><span class="p">.</span><span class="n">json</span><span class="p">&#39;).</span><span class="n">then</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">data</span><span class="p">){</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(&#39;</span><span class="n">promise</span> <span class="n">result</span> <span class="o">=</span> <span class="p">&#39;</span> <span class="o">+</span> <span class="n">data</span><span class="p">)</span>
+<span class="p">}).</span><span class="n">catch</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>它和之前的<code>hellopromise.js</code>执行结果是一模一样的，只差一行代码，即</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">Promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="s2">&quot;bluebird&quot;</span><span class="p">);</span>
+</pre></div>
+<p>由此可以看出，Node.js原生的Promise和bluebird的实现是兼容的。只要掌握其中任何一个，几乎是0成本代价就可以学会。</p>
+
+<p>这里用的是<code>var</code>来声明<code>Promise</code>，主要目的是为了当前文件使用，如果是koa或express这样的web项目里，使用全局替换呢？</p>
+
+<p>其实也很简单，使用global全局替换就好，在应用的入口文件app.js里</p>
+<div class="highlight"><pre><span class="vg">global</span><span class="o">.</span><span class="vg">Promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="s2">&quot;bluebird&quot;</span><span class="p">);</span>
+</pre></div>
+<h2>Promisification</h2>
+
+<blockquote>
+<p>Promisification means converting an existing promise-unaware API to a promise-returning API.</p>
+</blockquote>
+
+<p>这里主要介绍一下bluebird的promisefy和promisifyAll</p>
+
+<p>promisifyAll更彻底，对类方法或者对象方法都可以进行promisify处理，是最简单的包裹promisify的常用手段，比如</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">Promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="s2">&quot;bluebird&quot;</span><span class="p">);</span>
+<span class="vg">var</span><span class="w"> </span><span class="vg">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">promisifyAll</span><span class="p">(</span><span class="vg">require</span><span class="p">(</span><span class="s2">&quot;fs&quot;</span><span class="p">));</span>
+
+<span class="vg">fs</span><span class="o">.</span><span class="vg">readFileAsync</span><span class="p">(</span><span class="s2">&quot;./package.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">contents</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">contents</span><span class="p">);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">error</span><span class="p">(</span><span class="vg">e</span><span class="o">.</span><span class="vg">stack</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+<p>再来个稍微复杂一些的，下面这个例子有abc 3个方法，每个都是普通函数，通过bluebird的promisifyAll让他变成promise对象，继而完成流程控制。</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">Promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="s2">&quot;bluebird&quot;</span><span class="p">);</span>
+
+<span class="vg">var</span><span class="w"> </span><span class="vg">obj</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">  </span><span class="nl">a:</span><span class="w"> </span><span class="vg">function</span><span class="p">(){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;a&#39;)</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nl">b:</span><span class="w"> </span><span class="vg">function</span><span class="p">(){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;b&#39;)</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nl">c:</span><span class="w"> </span><span class="vg">function</span><span class="p">(){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;c&#39;)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="vg">Promise</span><span class="o">.</span><span class="vg">promisifyAll</span><span class="p">(</span><span class="vg">obj</span><span class="p">);</span>
+
+<span class="vg">obj</span><span class="o">.</span><span class="vg">aAsync</span><span class="p">()</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">obj</span><span class="o">.</span><span class="vg">bAsync</span><span class="p">())</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">obj</span><span class="o">.</span><span class="vg">cAsync</span><span class="p">())</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">err</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">err</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+<p>是不是非常简单？</p>
+
+<p>危险常常来自便利处，大量的这样promisifyAll，会不会有性能问题呢？error被bluebird包裹了，我们自己想定制呢？</p>
+
+<h2>Promise的5个api</h2>
+
+<p><img src="images/promise-methods.png" alt=""></p>
+
+<p>1）构造方法</p>
+
+<p>语法</p>
+
+<blockquote>
+<p>new Promise( /* executor */ function(resolve, reject) { ... } );</p>
+</blockquote>
+
+<p>所有Promise只能这样创建，它的2个参数resolve和reject是唯一可以改变对象状态的方法。</p>
+
+<ul>
+<li>resolve会让状态从pending切换到fulfilled</li>
+<li>reject会让状态从pending切换到rejected（可选，不写也不算错）
+
+<ul>
+<li>Promise.prototype.then()可以当前操作的reject异常</li>
+<li>Promise.prototype.catch()可以捕获全局的reject异常</li>
+</ul></li>
+</ul>
+
+<p>备注：这里的resolve相当于Promise.resolve的别名，reject相当于Promise.reject的别名。</p>
+
+<p>promise/api/a.js</p>
+<div class="highlight"><pre><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">resolve</span><span class="p">(</span><span class="il">1</span><span class="p">);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">value</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;new Promise &#39; + value);</span>
+<span class="p">});</span>
+
+<span class="vg">Promise</span><span class="o">.</span><span class="vg">resolve</span><span class="p">(</span><span class="il">1</span><span class="p">)</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">value</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;Promise.resolve &#39; + value);</span>
+<span class="p">});</span>
+</pre></div>
+<p>这2个示例resolve效果是一样的，可以看出Promise.resolve是便捷用法</p>
+
+<p>promise/api/b.js</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Error</span><span class="p">(</span><span class="c1">&#39;this is a error&#39;)</span>
+
+<span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">reject</span><span class="p">(</span><span class="vg">error</span><span class="p">);</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">err</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;new Promise &#39; + err);</span>
+<span class="p">});</span>
+
+<span class="vg">Promise</span><span class="o">.</span><span class="vg">reject</span><span class="p">(</span><span class="vg">error</span><span class="p">)</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">function</span><span class="p">(</span><span class="vg">err</span><span class="p">){</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;Promise.resolve &#39; + err);</span>
+<span class="p">});</span>
+</pre></div>
+<p>这2个示例reject效果是一样的，可以看出Promise.reject是便捷用法</p>
+
+<p>既然resolve和reject都有别名，那么我们能不能不适用构造函数，直接使用便捷用法呢？答案是不可以的，具体如下，见promise/api/c.js</p>
+<div class="highlight"><pre><span class="c1">// 以下做法是错误的</span>
+<span class="k">new</span> <span class="n">Promise</span><span class="p">(</span><span class="k">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="n">Promise</span><span class="p">.</span><span class="n">resolve</span><span class="p">(</span><span class="mh">1</span><span class="p">)</span>
+<span class="p">}).</span><span class="n">then</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">value</span><span class="p">){</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(&#39;</span><span class="n">Promise</span><span class="p">.</span><span class="n">resolve</span> <span class="mh">1</span> <span class="p">&#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+<p>可能有的库会实现，但Node.js的原生Promise是不支持这样的写法的。</p>
+
+<p>想便捷的话，一般采用下面这样的方法</p>
+
+<p>promise/api/d.js</p>
+<div class="highlight"><pre><span class="c1">// 以下做法是正确的的</span>
+<span class="k">function</span> <span class="n">hello</span><span class="p">(</span><span class="n">i</span><span class="p">){</span>
+    <span class="k">return</span> <span class="n">Promise</span><span class="p">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">hello</span><span class="p">(</span><span class="mh">1</span><span class="p">).</span><span class="n">then</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">value</span><span class="p">){</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(&#39;</span><span class="n">Promise</span><span class="p">.</span><span class="n">resolve</span> <span class="mh">1</span> <span class="p">&#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+<p>这种写法可行原因是，Promise.resolve返回的是Promise对象，相当于<code>new Promise(resolve, reject)</code></p>
+
+<p>但是一定要注意，一旦的函数确定要返回Promise对象，就一定要全部可能分支都要返回Promise对象，不然出了问题非常难定位。</p>
+
+<p>举个简单的例子，i是奇数或偶数做不一样的处理，一定要严谨。</p>
+
+<p>promise/api/e.js</p>
+<div class="highlight"><pre><span class="c1">// 奇数和偶数</span>
+<span class="k">function</span> <span class="n">hello</span><span class="p">(</span><span class="n">i</span><span class="p">){</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mh">2</span> <span class="o">==</span> <span class="mh">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Promise</span><span class="p">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Promise</span><span class="p">.</span><span class="n">reject</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">hello</span><span class="p">(</span><span class="mh">1</span><span class="p">).</span><span class="n">then</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">value</span><span class="p">){</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(&#39;</span><span class="n">Promise</span><span class="p">.</span><span class="n">reject</span> <span class="mh">1</span> <span class="p">&#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="n">hello</span><span class="p">(</span><span class="mh">2</span><span class="p">).</span><span class="n">then</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">value</span><span class="p">){</span>
+    <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(&#39;</span><span class="n">Promise</span><span class="p">.</span><span class="n">resolve</span> <span class="mh">1</span> <span class="p">&#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+<p>其实按照规范Promise.resolve和Promise.reject还有更多用法，其他的给出语法定义，了解一下即可，没有特别需要说明的。</p>
+
+<blockquote>
+<p>Promise.resolve(value);
+Promise.resolve(promise);
+Promise.resolve(thenable);</p>
+
+<p>Promise.reject(reason);</p>
+</blockquote>
+
+<p>2）核心方法Promise.prototype.then()</p>
+
+<p>语法</p>
+
+<blockquote>
+<p>p.then(onFulfilled, onRejected);</p>
+
+<p>p.then(function(value) {
+   // fulfillment
+  }, function(reason) {
+  // rejection
+});</p>
+</blockquote>
+
+<p>3）次核心方法Promise.prototype.catch()</p>
+
+<blockquote>
+<p>p.catch(onRejected);</p>
+
+<p>p.catch(function(reason) {
+   // rejection
+});</p>
+</blockquote>
+
+<p>4）工具方法</p>
+
+<ul>
+<li>Promise.all(iterable)</li>
+<li>Promise.race(iterable)</li>
+</ul>
+
+<p>Promise.all 在接收到的所有的对象promise都变为 FulFilled 或者 Rejected 状态之后才会继续进行后面的处理， 与之相对的是 Promise.race 只要有一个promise对象进入 FulFilled 或者 Rejected 状态的话，就会继续进行后面的处理。</p>
+
+<p>简单点就说，all是所有都执行完成，再执行then，而race语义上相当于once，有个执行完成后就会执行then。一定要注意，它们是并发的，只是结果处理的点不一样而已。</p>
+
+<p>它们的使用方法是一样，接收一个promise对象数组为参数。</p>
+
+<p>all.js</p>
+<div class="highlight"><pre><span class="c1">&#39;use strict&#39;</span>
+
+<span class="vg">let</span><span class="w"> </span><span class="vg">sleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="vg">time</span><span class="p">,</span><span class="w"> </span><span class="vg">info</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">resolve</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">setTimeout</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">info</span><span class="p">)</span>
+<span class="w">        </span><span class="vg">resolve</span><span class="p">(</span><span class="c1">&#39;this is &#39; + info)</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="vg">time</span><span class="p">)</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="vg">let</span><span class="w"> </span><span class="vg">loser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">sleep</span><span class="p">(</span><span class="il">1000</span><span class="p">,</span><span class="w"> </span><span class="c1">&#39;loser&#39;)</span>
+<span class="vg">let</span><span class="w"> </span><span class="vg">winner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">sleep</span><span class="p">(</span><span class="il">4</span><span class="p">,</span><span class="w"> </span><span class="c1">&#39;winner&#39;)</span>
+
+<span class="o">//</span><span class="w"> </span><span class="vg">main</span>
+<span class="vg">Promise</span><span class="o">.</span><span class="vg">all</span><span class="p">([</span><span class="vg">winner</span><span class="p">,</span><span class="w"> </span><span class="vg">loser</span><span class="p">])</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">value</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;所有都完成后会执行then，它们是并行的哦: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="vg">value</span><span class="p">)</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="c1">&#39;this is winner&#39;</span>
+<span class="p">})</span>
+</pre></div>
+<p>执行结果</p>
+<div class="highlight"><pre><span class="nv">$ </span>node api/all.js 
+winner
+loser
+所有都完成后会执行then，它们是并行的哦: this is winner,this is loser
+</pre></div>
+<p>race.js</p>
+<div class="highlight"><pre><span class="c1">&#39;use strict&#39;</span>
+
+<span class="vg">let</span><span class="w"> </span><span class="vg">sleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="vg">time</span><span class="p">,</span><span class="w"> </span><span class="vg">info</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">resolve</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">setTimeout</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">info</span><span class="p">)</span>
+<span class="w">        </span><span class="vg">resolve</span><span class="p">(</span><span class="c1">&#39;this is &#39; + info)</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="vg">time</span><span class="p">)</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="vg">let</span><span class="w"> </span><span class="vg">loser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">sleep</span><span class="p">(</span><span class="il">1000</span><span class="p">,</span><span class="w"> </span><span class="c1">&#39;loser&#39;)</span>
+<span class="vg">let</span><span class="w"> </span><span class="vg">winner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">sleep</span><span class="p">(</span><span class="il">4</span><span class="p">,</span><span class="w"> </span><span class="c1">&#39;winner&#39;)</span>
+
+<span class="o">//</span><span class="w"> </span><span class="vg">main</span>
+<span class="vg">Promise</span><span class="o">.</span><span class="vg">race</span><span class="p">([</span><span class="vg">winner</span><span class="p">,</span><span class="w"> </span><span class="vg">loser</span><span class="p">])</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">value</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;只要有一个成功，就会执行then，和顺序无关，只看执行速度: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="vg">value</span><span class="p">)</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="c1">&#39;this is winner&#39;</span>
+<span class="p">})</span>
+</pre></div>
+<p>执行结果</p>
+<div class="highlight"><pre><span class="nv">$ </span>node api/race.js
+winner
+只要有一个成功，就会执行then，和顺序无关，只看执行速度: this is winner
+loser
+</pre></div>
+<h2>参考阅读</h2>
+
+<ol>
+<li><a href="http://wiki.commonjs.org/wiki/Promises/A">Promises/A</a></li>
+<li><a href="http://wiki.commonjs.org/wiki/Promises/B">Promises/B</a></li>
+<li><a href="http://wiki.commonjs.org/wiki/Promises/D">Promises/D</a></li>
+<li><a href="https://www.promisejs.org/">Promisejs</a></li>
+<li><a href="https://promisesaplus.com/">Promises/A+</a></li>
+<li><a href="https://github.com/kriskowal/asap">As soon as possible</a></li>
+<li><a href="https://gist.github.com/unscriptable/814052">A minimalist implementation of a javascript promise</a></li>
+<li><a href="http://stackoverflow.com/questions/12923533/lightweight-implementation-of-promises">Lightweight implementation of promises</a></li>
+<li><a href="http://stackoverflow.com/questions/17718673/how-is-a-promise-defer-library-implemented">How is a promise/defer library implemented?</a></li>
+<li><a href="http://stackoverflow.com/questions/23772801/basic-javascript-promise-implementation-attempt/23785244#23785244">Basic Javascript promise implementation attempt</a></li>
+<li><a href="https://blog.domenic.me/youre-missing-the-point-of-promises/">You&#39;re Missing the Point of Promises</a></li>
+<li><a href="http://www.slideshare.net/domenicdenicola/boom-promisesa-was-born">Boom! Promises/A+ Was Born</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Futures_and_promises">Futures and promises</a></li>
+<li><a href="http://www.html5rocks.com/zh/tutorials/es6/promises/">JavaScript Promises - There and back again</a></li>
+<li><a href="https://github.com/liubin/promises-book">Promise 迷你书</a></li>
+<li>https://blog.domenic.me/youre-missing-the-point-of-promises/</li>
+<li>https://strongloop.com/strongblog/promises-in-node-js-with-q-an-alternative-to-callbacks/</li>
+<li>https://github.com/kriskowal/q/wiki/General-Promise-Resources</li>
+<li>https://www.w3.org/2001/tag/doc/promises-guide</li>
+<li>https://github.com/bevacqua/promisees</li>
+</ol>
+
+<p>源码 https://github.com/calvinmetcalf/lie/blob/master/lib/index.js</p>
+
+<h1>co引出的“血案”</h1>
+
+<p>es6的generator本意是为了计算而设计的迭代器，但tj觉得它可以用于流程控制，于是就有了co，co的历史可以说经历了目前所有的流程控制方案，而且由于支持generator和yield就导致yieldable。</p>
+
+<p>实际上co和generator是把双刃剑，给了我们强大便利的同时，也增加了非常多的概念，可能是过渡性的，也可能是过时的。</p>
+
+<p>可是，你真的需要了解这么多么？从学习的角度，当然是多多意义，如果从实用的角度看，你可能不需要。</p>
+
+<p>存在即合理，那么我们就看看这“血案”吧。</p>
+
+<h2>generator/yield</h2>
+
+<p>先看一下generator如何执行</p>
+<div class="highlight"><pre><span class="vg">function</span><span class="o">*</span><span class="w"> </span><span class="vg">doSomething</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;1&#39;);</span>
+<span class="w">    </span><span class="vg">yield</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="vg">Line</span><span class="w"> </span><span class="p">(</span><span class="vg">A</span><span class="p">)</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;2&#39;);</span>
+<span class="p">}</span>
+
+<span class="vg">var</span><span class="w"> </span><span class="vg">gen1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">doSomething</span><span class="p">();</span>
+
+<span class="vg">gen1</span><span class="o">.</span><span class="vg">next</span><span class="p">();</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="vg">Prints</span><span class="w"> </span><span class="il">1</span><span class="w"> </span><span class="vg">then</span><span class="w"> </span><span class="vg">pauses</span><span class="w"> </span><span class="vg">at</span><span class="w"> </span><span class="vg">line</span><span class="w"> </span><span class="p">(</span><span class="vg">A</span><span class="p">)</span>
+<span class="vg">gen1</span><span class="o">.</span><span class="vg">next</span><span class="p">();</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="vg">resumes</span><span class="w"> </span><span class="vg">execution</span><span class="w"> </span><span class="vg">at</span><span class="w"> </span><span class="vg">line</span><span class="w"> </span><span class="p">(</span><span class="vg">A</span><span class="p">),</span><span class="w"> </span><span class="vg">then</span><span class="w"> </span><span class="vg">prints</span><span class="w"> </span><span class="il">2</span>
+</pre></div>
+<p>说明</p>
+
+<ul>
+<li>gen1是产生出来的generator对象</li>
+<li>第一个next，会打印出1，之后悬停在 yield所在行，即Line (A)</li>
+<li>第二个next，恢复line (A)点的执行，之后打印出2</li>
+</ul>
+
+<p>如果有多个yield呢？无穷无尽的next。。。</p>
+
+<p>于是tj就写<a href="https://github.com/tj/co">co</a>这个著名的generator执行器，co目前已经是v4了，彻底的面向Promise了，个中曲折也是够八卦的了。</p>
+
+<h2>co</h2>
+
+<blockquote>
+<p>co : The ultimate generator based flow-control goodness for nodejs (supports thunks, promises, etc)</p>
+</blockquote>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">co</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">require</span><span class="p">(</span><span class="c1">&#39;co&#39;);</span>
+
+<span class="vg">co</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="o">*</span><span class="p">(){</span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="vg">yield</span><span class="w"> </span><span class="vg">any</span><span class="w"> </span><span class="vg">promise</span>
+<span class="w">  </span><span class="vg">var</span><span class="w"> </span><span class="vg">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">yield</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">resolve</span><span class="p">(</span><span class="vg">true</span><span class="p">);</span>
+<span class="p">})</span>
+</pre></div>
+<p>这就是最简单的co示例。co就2个api</p>
+
+<ul>
+<li>co(function *(){}) 包裹的是无参数的generator</li>
+<li>co.wrap(function *(param){}) 有参数的generator</li>
+</ul>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">co</span><span class="o">.</span><span class="vg">wrap</span><span class="p">(</span><span class="vg">function</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="vg">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">yield</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">resolve</span><span class="p">(</span><span class="vg">val</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="vg">fn</span><span class="p">(</span><span class="vg">true</span><span class="p">)</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="p">});</span>
+</pre></div>
+<h2>co源码解析</h2>
+
+<p>co@4.6版本不到240行代码，整体来说，还算比较简单。但并不容易阅读</p>
+<div class="highlight"><pre><span class="c1">// 核心代码</span>
+<span class="k">function</span> <span class="n">co</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 缓存this</span>
+  <span class="k">var</span> <span class="n">ctx</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">var</span> <span class="n">args</span> <span class="o">=</span> <span class="n">slice</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="mh">1</span><span class="p">)</span>
+
+  <span class="c1">// we wrap everything in a promise to avoid promise chaining,</span>
+  <span class="c1">// which leads to memory leak errors.</span>
+  <span class="c1">// see https://github.com/tj/co/issues/180</span>
+  <span class="c1">// 重点，co的返回值是Promise对象。为什么可以then和catch的根源</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">Promise</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">resolve</span><span class="p">,</span> <span class="n">reject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 如果你懂Promise规范，就知道这是解决状态回调，这是首次调用</span>
+    <span class="n">onFulfilled</span><span class="p">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * @param {Mixed} res</span>
+<span class="cm">     * @return {Promise}</span>
+<span class="cm">     * @api private</span>
+<span class="cm">     */</span>
+
+    <span class="k">function</span> <span class="n">onFulfilled</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="n">ret</span><span class="p">;</span>
+      <span class="n">try</span> <span class="p">{</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">gen</span><span class="p">.</span><span class="n">next</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+      <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">reject</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">next</span><span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * @param {Error} err</span>
+<span class="cm">     * @return {Promise}</span>
+<span class="cm">     * @api private</span>
+<span class="cm">     */</span>
+    <span class="c1">// 如果你懂Promise规范，就知道这是拒绝状态回调</span>
+    <span class="k">function</span> <span class="n">onRejected</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="n">ret</span><span class="p">;</span>
+      <span class="n">try</span> <span class="p">{</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">gen</span><span class="p">.</span><span class="n">throw</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+      <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">reject</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">next</span><span class="p">(</span><span class="n">ret</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// generator执行器</span>
+    <span class="c1">// 如果ret.done，返回ret.value</span>
+    <span class="c1">// 否则，</span>
+    <span class="k">function</span> <span class="n">next</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 如果执行完成，直接调用resolve把promise置为成功状态</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">done</span><span class="p">)</span> <span class="k">return</span> <span class="n">resolve</span><span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+      <span class="c1">// 把yield的值转换成promise</span>
+      <span class="c1">// 支持 promise，generator，generatorFunction，array，object</span>
+      <span class="c1">// toPromise的实现可以先不管，只要知道是转换成promise就行了</span>
+      <span class="k">var</span> <span class="n">value</span> <span class="o">=</span> <span class="n">toPromise</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ret</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+      <span class="c1">// 成功转换就可以直接给新的promise添加onFulfilled, onRejected。当新的promise状态变成结束态（成功或失败）。就会调用对应的回调。整个next链路就执行下去了。</span>
+      <span class="c1">// 为什么generator可以无限的next下去呢？</span>
+      <span class="c1">// return value.then(onFulfilled, onRejected);意味着，又要执行onFulfilled了</span>
+      <span class="c1">// onFulfilled里调用next(ret);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&amp;&amp;</span> <span class="n">isPromise</span><span class="p">(</span><span class="n">value</span><span class="p">))</span> <span class="k">return</span> <span class="n">value</span><span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">onFulfilled</span><span class="p">,</span> <span class="n">onRejected</span><span class="p">);</span>
+
+      <span class="c1">// 如果以上情况都没发生，报错</span>
+      <span class="k">return</span> <span class="n">onRejected</span><span class="p">(</span><span class="k">new</span> <span class="n">TypeError</span><span class="p">(&#39;</span><span class="n">You</span> <span class="n">may</span> <span class="n">only</span> <span class="n">yield</span> <span class="n">a</span> <span class="k">function</span><span class="p">,</span> <span class="n">promise</span><span class="p">,</span> <span class="n">generator</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="k">or</span> <span class="n">object</span><span class="p">,</span> <span class="p">&#39;</span>
+        <span class="o">+</span> <span class="p">&#39;</span><span class="n">but</span> <span class="n">the</span> <span class="n">following</span> <span class="n">object</span> <span class="n">was</span> <span class="nl">passed:</span> <span class="s">&quot;&#39; + String(ret.value) + &#39;&quot;</span><span class="p">&#39;));</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+<p>读此源码要点</p>
+
+<ul>
+<li>必须深刻理解Promise实现，知道构造函数里的onFulfilled和onRejected是什么意思</li>
+<li>必须了解generator的执行机制，理解迭代器里的next以及next的返回对象{value:&#39;&#39;,done: true}</li>
+</ul>
+
+<p>核心代码入口是onFulfilled，无论如何第一次的next(ret)是一定要执行的，因为generator必须要next()一下的。</p>
+
+<p>所以next(ret)一定是重点，而且我们看onFulfilled和onRejected里都调用它，也就是所有的逻辑都会丢在这个next(ret)方法里。它实际上是一个状态机的简单实现。</p>
+<div class="highlight"><pre><span class="c1">// generator执行器</span>
+<span class="c1">// 如果ret.done，返回ret.value</span>
+<span class="c1">// 否则，</span>
+<span class="k">function</span> <span class="n">next</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 如果执行完成，直接调用resolve把promise置为成功状态</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">done</span><span class="p">)</span> <span class="k">return</span> <span class="n">resolve</span><span class="p">(</span><span class="n">ret</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+  <span class="c1">// 把yield的值转换成promise</span>
+  <span class="c1">// 支持 promise，generator，generatorFunction，array，object</span>
+  <span class="c1">// toPromise的实现可以先不管，只要知道是转换成promise就行了</span>
+  <span class="k">var</span> <span class="n">value</span> <span class="o">=</span> <span class="n">toPromise</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ret</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+
+  <span class="c1">// 成功转换就可以直接给新的promise添加onFulfilled, onRejected。当新的promise状态变成结束态（成功或失败）。就会调用对应的回调。整个next链路就执行下去了。</span>
+  <span class="c1">// 为什么generator可以无限的next下去呢？</span>
+  <span class="c1">// return value.then(onFulfilled, onRejected);意味着，又要执行onFulfilled了</span>
+  <span class="c1">// onFulfilled里调用next(ret);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&amp;&amp;</span> <span class="n">isPromise</span><span class="p">(</span><span class="n">value</span><span class="p">))</span> <span class="k">return</span> <span class="n">value</span><span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">onFulfilled</span><span class="p">,</span> <span class="n">onRejected</span><span class="p">);</span>
+
+  <span class="c1">// 如果以上情况都没发生，报错</span>
+  <span class="k">return</span> <span class="n">onRejected</span><span class="p">(</span><span class="k">new</span> <span class="n">TypeError</span><span class="p">(&#39;</span><span class="n">You</span> <span class="n">may</span> <span class="n">only</span> <span class="n">yield</span> <span class="n">a</span> <span class="k">function</span><span class="p">,</span> <span class="n">promise</span><span class="p">,</span> <span class="n">generator</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="k">or</span> <span class="n">object</span><span class="p">,</span> <span class="p">&#39;</span>
+    <span class="o">+</span> <span class="p">&#39;</span><span class="n">but</span> <span class="n">the</span> <span class="n">following</span> <span class="n">object</span> <span class="n">was</span> <span class="nl">passed:</span> <span class="s">&quot;&#39; + String(ret.value) + &#39;&quot;</span><span class="p">&#39;));</span>
+<span class="p">}</span>
+</pre></div>
+<p>情景1: 状态完成</p>
+<div class="highlight"><pre><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="err">如果执行完成，直接调用</span><span class="vg">resolve</span><span class="err">把</span><span class="vg">promise</span><span class="err">置为成功状态</span>
+<span class="w">  </span><span class="vg">if</span><span class="w"> </span><span class="p">(</span><span class="vg">ret</span><span class="o">.</span><span class="vg">done</span><span class="p">)</span><span class="w"> </span><span class="vg">return</span><span class="w"> </span><span class="vg">resolve</span><span class="p">(</span><span class="vg">ret</span><span class="o">.</span><span class="vg">value</span><span class="p">);</span>
+</pre></div>
+<p>情景2： next，跳回onFulfilled，递归</p>
+<div class="highlight"><pre><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="err">成功转换就可以直接给新的</span><span class="vg">promise</span><span class="err">添加</span><span class="vg">onFulfilled</span><span class="p">,</span><span class="w"> </span><span class="vg">onRejected</span><span class="err">。当新的</span><span class="vg">promise</span><span class="err">状态变成结束态（成功或失败）。就会调用对应的回调。整个</span><span class="vg">next</span><span class="err">链路就执行下去了。</span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="err">为什么</span><span class="vg">generator</span><span class="err">可以无限的</span><span class="vg">next</span><span class="err">下去呢？</span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="vg">return</span><span class="w"> </span><span class="vg">value</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">onFulfilled</span><span class="p">,</span><span class="w"> </span><span class="vg">onRejected</span><span class="p">);</span><span class="err">意味着，又要执行</span><span class="vg">onFulfilled</span><span class="err">了</span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="vg">onFulfilled</span><span class="err">里调用</span><span class="vg">next</span><span class="p">(</span><span class="vg">ret</span><span class="p">);</span>
+<span class="w">  </span><span class="vg">if</span><span class="w"> </span><span class="p">(</span><span class="vg">value</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="vg">isPromise</span><span class="p">(</span><span class="vg">value</span><span class="p">))</span><span class="w"> </span><span class="vg">return</span><span class="w"> </span><span class="vg">value</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">onFulfilled</span><span class="p">,</span><span class="w"> </span><span class="vg">onRejected</span><span class="p">);</span>
+</pre></div>
+<p>情景3: 捕获异常</p>
+<div class="highlight"><pre><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="err">如果以上情况都没发生，报错</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">onRejected</span><span class="p">(</span><span class="vg">new</span><span class="w"> </span><span class="vg">TypeError</span><span class="p">(</span><span class="c1">&#39;You may only yield a function, promise, generator, array, or object, &#39;</span>
+<span class="w">    </span><span class="o">+</span><span class="w"> </span><span class="c1">&#39;but the following object was passed: &quot;&#39; + String(ret.value) + &#39;&quot;&#39;));</span>
+</pre></div>
+<p>以上是核心代码说明。之前我们讲了co实际有2种api，有参数和无参数的，很明显以上是无参数的generator执行器，那么有参数的wrap呢？</p>
+<div class="highlight"><pre><span class="c1">// 为有参数的generator调用，提供简单包装</span>
+<span class="n">co</span><span class="p">.</span><span class="n">wrap</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">fn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">createPromise</span><span class="p">.</span><span class="n">__generatorFunction__</span> <span class="o">=</span> <span class="n">fn</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">createPromise</span><span class="p">;</span>
+  <span class="k">function</span> <span class="n">createPromise</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 重点，把arguments给fn当参数。</span>
+    <span class="c1">// call和apply是常规js api</span>
+    <span class="k">return</span> <span class="n">co</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">fn</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">arguments</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+<p>通过call和apply组合使用，知识点比较简单，但这样用还是挺巧妙的。</p>
+
+<p>其他的就基本是工具类了，其实也挺有意思的，自己看吧</p>
+
+<p>更多评论见<a href="https://cnodejs.org/topic/576bdffa889605241796f7d9">cnode co 4.6源码</a>，这里就不重复贴了。</p>
+
+<p>如果熟悉koa，可以看一下<a href="https://github.com/koajs/convert">convert</a> or <a href="https://github.com/koajs/compose">compose</a>，或者在Koa中间件原理一节。</p>
+
+<h1>yieldable 5种</h1>
+
+<p>yieldable本来是没有这个词的，因为在generator里可以是yield关键词，而yield后面接的有6种可能，故而把这些可以yield接的方式成为yieldable，即可以yield接的。</p>
+
+<ul>
+<li>promises</li>
+<li>thunks (functions)</li>
+<li>array (parallel execution)</li>
+<li>objects (parallel execution)</li>
+<li>generators and generatorFunctions</li>
+</ul>
+
+<p><img src="images/co.png" alt="Co"></p>
+
+<ul>
+<li>顺序执行
+
+<ul>
+<li>promises</li>
+<li>thunks</li>
+</ul></li>
+<li>并行
+
+<ul>
+<li>array</li>
+<li>objects</li>
+</ul></li>
+</ul>
+
+<p>无论是哪种，它们其实都可以是Promise（thunks会慢慢的废弃，后面讲），既然是Promise对象，它们就可以thenable，而co v4.6版本的执行的返回值就是Promise，至此完成了左侧闭环。</p>
+
+<p>至于generator和generatorFunction就要从yield和yield*讲起，在koa 1.x和2.x里有明显的应用。</p>
+
+<h2>promises</h2>
+
+<p>上面已经讲了，这里就不重复讲了</p>
+
+<h2>thunks (functions)</h2>
+
+<p>编译器的&quot;传名调用&quot;实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。</p>
+
+<p>thunk?</p>
+
+<ul>
+<li>thunk 是一个被封装了同步或异步任务的函数；</li>
+<li>thunk 有唯一一个参数 callback，是 CPS 函数；</li>
+<li>thunk 运行后返回新的 thunk 函数，形成链式调用；</li>
+<li>thunk 自身执行完毕后，结果进入 callback 运行；</li>
+<li>callback 的返回值如果是 thunk 函数，则等该 thunk 执行完毕将结果输入新 thunk 函数运行；如果是其它值，则当做正确结果进入新的 thunk 函数运行；</li>
+</ul>
+
+<p>在 JavaScript 语言中，Thunk 函数替换的不是表达式，而是多参数函数，将其替换成单参数的版本，且只接受回调函数作为参数。</p>
+<div class="highlight"><pre><span class="c1">// 正常版本的readFile（多参数版本）</span>
+<span class="n">fs</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">callback</span><span class="p">);</span>
+
+<span class="c1">// Thunk版本的readFile（单参数版本）</span>
+<span class="k">var</span> <span class="n">readFileThunk</span> <span class="o">=</span> <span class="n">Thunk</span><span class="p">(</span><span class="n">fileName</span><span class="p">);</span>
+<span class="n">readFileThunk</span><span class="p">(</span><span class="n">callback</span><span class="p">);</span>
+
+<span class="k">var</span> <span class="n">Thunk</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">fileName</span><span class="p">){</span>
+  <span class="k">return</span> <span class="k">function</span> <span class="p">(</span><span class="n">callback</span><span class="p">){</span>
+    <span class="k">return</span> <span class="n">fs</span><span class="p">.</span><span class="n">readFile</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">callback</span><span class="p">);</span> 
+  <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+<p>上面代码中，fs 模块的 readFile 方法是一个多参数函数，两个参数分别为文件名和回调函数。经过转换器处理，它变成了一个单参数函数，只接受回调函数作为参数。这个单参数版本，就叫做 Thunk 函数。</p>
+
+<p>任何函数，只要参数有回调函数，就能写成 Thunk 函数的形式。下面是一个简单的 Thunk 函数转换器。</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">Thunk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">function</span><span class="p">(</span><span class="vg">fn</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="p">(){</span>
+<span class="w">    </span><span class="vg">var</span><span class="w"> </span><span class="vg">args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">Array</span><span class="o">.</span><span class="vg">prototype</span><span class="o">.</span><span class="vg">slice</span><span class="o">.</span><span class="vg">call</span><span class="p">(</span><span class="vg">arguments</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">return</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">callback</span><span class="p">){</span>
+<span class="w">      </span><span class="vg">args</span><span class="o">.</span><span class="vg">push</span><span class="p">(</span><span class="vg">callback</span><span class="p">);</span>
+<span class="w">      </span><span class="vg">return</span><span class="w"> </span><span class="vg">fn</span><span class="o">.</span><span class="vg">apply</span><span class="p">(</span><span class="vg">this</span><span class="p">,</span><span class="w"> </span><span class="vg">args</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+<p>使用上面的转换器，生成 fs.readFile 的 Thunk 函数。</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">readFileThunk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">Thunk</span><span class="p">(</span><span class="vg">fs</span><span class="o">.</span><span class="vg">readFile</span><span class="p">);</span>
+<span class="vg">readFileThunk</span><span class="p">(</span><span class="vg">fileA</span><span class="p">)(</span><span class="vg">callback</span><span class="p">);</span>
+</pre></div>
+<p>更多</p>
+
+<ul>
+<li>https://github.com/tj/node-thunkify</li>
+<li>https://github.com/node-modules/thunkify-wrap</li>
+<li>https://github.com/thunks/thunks</li>
+</ul>
+
+<h2>array (parallel execution)</h2>
+<div class="highlight"><pre><span class="vg">co</span><span class="p">(</span><span class="vg">function</span><span class="o">*</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">var</span><span class="w"> </span><span class="vg">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">yield</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">resolve</span><span class="p">(</span><span class="il">1</span><span class="p">),</span>
+<span class="w">    </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">resolve</span><span class="p">(</span><span class="il">2</span><span class="p">),</span>
+<span class="w">    </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">resolve</span><span class="p">(</span><span class="il">3</span><span class="p">),</span>
+<span class="w">  </span><span class="p">];</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">res</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="il">1</span><span class="p">,</span><span class="w"> </span><span class="il">2</span><span class="p">,</span><span class="w"> </span><span class="il">3</span><span class="p">]</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">onerror</span><span class="p">);</span>
+</pre></div>
+<h2>objects (parallel execution)</h2>
+<div class="highlight"><pre><span class="vg">co</span><span class="p">(</span><span class="vg">function</span><span class="o">*</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">var</span><span class="w"> </span><span class="vg">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">yield</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="il">1</span><span class="o">:</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">resolve</span><span class="p">(</span><span class="il">1</span><span class="p">),</span>
+<span class="w">    </span><span class="il">2</span><span class="o">:</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">resolve</span><span class="p">(</span><span class="il">2</span><span class="p">),</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">res</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="il">1</span><span class="o">:</span><span class="w"> </span><span class="il">1</span><span class="p">,</span><span class="w"> </span><span class="il">2</span><span class="o">:</span><span class="w"> </span><span class="il">2</span><span class="w"> </span><span class="p">}</span>
+<span class="p">})</span><span class="o">.</span><span class="vg">catch</span><span class="p">(</span><span class="vg">onerror</span><span class="p">);</span>
+</pre></div>
+<h2>Generators and Generator Functions</h2>
+
+<p>Any generator or generator function you can pass into co can be yielded as well. This should generally be avoided as we should be moving towards spec-compliant Promises instead.</p>
+
+<p>koa 1.x</p>
+<div class="highlight"><pre><span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="vg">next</span><span class="p">){</span>
+<span class="w">  </span><span class="vg">var</span><span class="w"> </span><span class="vg">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Date</span><span class="p">;</span>
+<span class="w">  </span><span class="vg">yield</span><span class="w"> </span><span class="vg">next</span><span class="p">;</span>
+<span class="w">  </span><span class="vg">var</span><span class="w"> </span><span class="vg">ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Date</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="vg">start</span><span class="p">;</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="c1">&#39;%s %s - %s&#39;, this.method, this.url, ms);</span>
+<span class="p">});</span>
+</pre></div>
+<p>koa 2.x</p>
+<div class="highlight"><pre><span class="vg">app</span><span class="o">.</span><span class="vg">use</span><span class="p">(</span><span class="vg">co</span><span class="o">.</span><span class="vg">wrap</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="vg">ctx</span><span class="p">,</span><span class="w"> </span><span class="vg">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">const</span><span class="w"> </span><span class="vg">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Date</span><span class="p">();</span>
+<span class="w">  </span><span class="vg">yield</span><span class="w"> </span><span class="vg">next</span><span class="p">();</span>
+<span class="w">  </span><span class="vg">const</span><span class="w"> </span><span class="vg">ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Date</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="vg">start</span><span class="p">;</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="err">`$</span><span class="p">{</span><span class="vg">ctx</span><span class="o">.</span><span class="vg">method</span><span class="p">}</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="vg">ctx</span><span class="o">.</span><span class="vg">url</span><span class="p">}</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="err">$</span><span class="p">{</span><span class="vg">ms</span><span class="p">}</span><span class="vg">ms</span><span class="err">`</span><span class="p">);</span>
+<span class="p">}));</span>
+</pre></div>
+<h1>async/await</h1>
+
+<p>异步操作是 JavaScript 编程的麻烦事，麻烦到一直有人提出各种各样的方案，试图解决这个问题。</p>
+
+<p>从最早的回调函数，到 Promise 对象，再到 Generator 函数，每次都有所改进，但又让人觉得不彻底。它们都有额外的复杂性，都需要理解抽象的底层运行机制。</p>
+
+<p>异步I/O不就是读取一个文件吗，干嘛要搞得这么复杂？异步编程的最高境界，就是根本不用关心它是不是异步。可以说generator基本做到了，当你yieldable的时候，你是不需要在意它是怎么执行的，等待结果就好了。</p>
+
+<p>但generator的弊病是没有执行器，它本身就不是为流程控制而生的，所以co的出现只是解决了这个问题。</p>
+
+<p>可是，你不觉得怪么？非要加个co，才能好好的玩耍，这是不是有点脱裤子放屁的感觉？最好是直接就可以执行，并且效果和Yieldable一样。</p>
+
+<p>async/await 就是这样被搞出来的，很多人认为它是异步操作的终极解决方案。</p>
+
+<h2>Async 函数是什么？</h2>
+
+<p>ES7 stage-3里中有了更加标准的解决方案，新增了 async/await 两个关键词。很可惜没有入选es7的最终规范，以后就叫Async 函数吧（大家可以看看co的readme.md，最近更新的）</p>
+
+<p>async 可以声明一个异步函数，此函数需要返回一个 Promise 对象。await 可以等待一个 Promise 对象 resolve，并拿到结果。</p>
+
+<p>以下便是个例子</p>
+<div class="highlight"><pre><span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">((</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">setTimeout</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="il">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">await</span><span class="w"> </span><span class="vg">a1</span><span class="p">();</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;2333&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="vg">a2</span><span class="p">()</span>
+</pre></div>
+<p>async / await，就我所知比较早的实现出于F#等函数式语言，后被C# 4.0所吸收。套用MSDN的流程图：</p>
+
+<p><img src="images/msdn.jpeg" alt="Msdn"></p>
+
+<p>其可以有效地梳理流程，避免过多的语法噪音（说你呢Promise）。不过当然了，其只适合命令式的调用，适合过程表达。要梳理流程的话，还是Promise的then链式调用更为合适——利用函数的组合来把整个流程表达清楚。</p>
+
+<p>另外，await / async会不可避免地用到try..catch，而try..catch内的代码是不会被JavaScript引擎所优化的。所以在这时用Promise的reject来代为处理也比较合适。</p>
+
+<h2>await</h2>
+
+<ul>
+<li>await + async函数</li>
+<li>await + Promise</li>
+</ul>
+<div class="highlight"><pre><span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">((</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">setTimeout</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="il">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">await</span><span class="w"> </span><span class="vg">a1</span><span class="p">();</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="vg">a2</span><span class="p">()</span>
+</pre></div>
+<h2>一切都是Promise</h2>
+
+<p>await后面只能接Promise</p>
+<div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">asyncFn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="vg">await</span><span class="w"> </span><span class="vg">somecall</span><span class="p">();</span>
+<span class="w">      </span><span class="vg">resolve</span><span class="p">(</span><span class="vg">somevalue</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="vg">catch</span><span class="w"> </span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="vg">reject</span><span class="p">(</span><span class="vg">err</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">};</span>
+
+<span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">await</span><span class="w"> </span><span class="vg">asyncFn</span><span class="p">());</span>
+</pre></div>
+<h2>并行呢？</h2>
+
+<p>前面讲yield的时候讲过，并行有2种办法，yield加array或object。那么在Async函数里，await只支持Promise，那么它也可以并行么？</p>
+
+<p>通过上面的描述，我们可以发现，await只能接Promise是重点，那么能不能并行，其实就看Promise了。而我们在Promise章节里曾讲过2个基本的api：all和race，是不是很简单？</p>
+
+<p>async/array.js</p>
+<div class="highlight"><pre><span class="c1">&#39;use strict&#39;</span>
+
+<span class="vg">let</span><span class="w"> </span><span class="vg">sleep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="vg">time</span><span class="p">,</span><span class="w"> </span><span class="vg">info</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">resolve</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">setTimeout</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">info</span><span class="p">)</span>
+<span class="w">        </span><span class="vg">resolve</span><span class="p">(</span><span class="c1">&#39;this is &#39; + info)</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="vg">time</span><span class="p">)</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="vg">let</span><span class="w"> </span><span class="vg">loser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">sleep</span><span class="p">(</span><span class="il">1000</span><span class="p">,</span><span class="w"> </span><span class="c1">&#39;loser&#39;)</span>
+<span class="vg">let</span><span class="w"> </span><span class="vg">winner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">sleep</span><span class="p">(</span><span class="il">4</span><span class="p">,</span><span class="w"> </span><span class="c1">&#39;winner&#39;)</span>
+
+
+<span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">await</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">all</span><span class="p">([</span><span class="vg">winner</span><span class="p">,</span><span class="w"> </span><span class="vg">loser</span><span class="p">])</span><span class="o">.</span><span class="vg">then</span><span class="p">(</span><span class="vg">value</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;所有都完成后会执行then，它们是并行的哦: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="vg">value</span><span class="p">)</span><span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="c1">&#39;this is winner&#39;</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="vg">main</span><span class="p">()</span>
+</pre></div>
+<p>执行</p>
+<div class="highlight"><pre><span class="nv">$ </span>runkoa array.js
+array.js
+3babel presets <span class="nv">path</span> <span class="o">=</span> /Users/sang/.nvm/versions/node/v4.4.5/lib/node_modules/runkoa/node_modules/
+winner
+loser
+所有都完成后会执行then，它们是并行的哦: this is winner,this is loser
+hello world
+</pre></div>
+<p>核心代码</p>
+<div class="highlight"><pre><span class="vg">await</span><span class="w"> </span><span class="vg">Promise</span><span class="o">.</span><span class="vg">all</span><span class="p">([])</span>
+</pre></div>
+<p>race和all类似，这里就不在罗列了。</p>
+
+<h2>想Yieldable咋办？</h2>
+
+<p>我们写await就只能Promise，怎么就觉得不是那么如意
+co章节里讲了，只能<code>yield function, promise, generator, array, or object</code>，我们把能够yield的所有方式成为yieldable，即拥有yield能力。</p>
+
+<p>如下</p>
+
+<ul>
+<li>function(as Thunks)顺序执行</li>
+<li>promise顺序执行</li>
+<li>array并行执行</li>
+<li>object并行执行</li>
+<li>generatorFunction（yield *）递归执行</li>
+</ul>
+
+<p>如果你真的这么想折腾，很简单，把co当成 Promise 包装器就好了 </p>
+
+<ul>
+<li>await就只能Promise</li>
+<li>co只能返回Promise</li>
+</ul>
+
+<p>那么，</p>
+<div class="highlight"><pre><span class="vg">await</span><span class="w"> </span><span class="vg">co</span><span class="p">(</span><span class="vg">xxxx</span><span class="p">)</span>
+</pre></div>
+<p>是不是顺理成章呢？</p>
+
+<p>我个人不推荐这样做，从文章最开始的讲了async函数的初衷就是为了简单，况且Promise足够用，是未来必须掌握的技巧，没必要再加一个co。</p>
+
+<p>很多时候，让技术栈更纯粹点，开发效率和执行才会更好。</p>
+
+<h2>async函数实现</h2>
+
+<p>目前Async函数只有几个实现</p>
+
+<ul>
+<li><a href="https://github.com/nodejs/node-chakracore">ChakraCore JavaScript engine</a> c/c++实现</li>
+<li><a href="https://github.com/google/traceur-compiler/wiki/LanguageFeatures#async-generators-experimental">google/traceur-compiler</a></li>
+<li><a href="https://github.com/facebook/regenerator">facebook regenerator</a></li>
+<li><a href="http://babeljs.io/">babeljs</a></li>
+<li><a href="http://www.typescriptlang.org/">Typescript</a></li>
+<li><a href="https://github.com/nodejs/CTC/issues/7">Chrome 52. v8 5.1已经支持async函数</a></li>
+</ul>
+
+<p>除了ChakraCore\Chrome外，其他的都是拿generator来模拟的，所以效率上看，肯定是没有原生效率高的。</p>
+
+<p>Chakra引擎内建的实现。可以看到的是，其await实现与yield实现类似。yield和await在token解析时大多相邻甚至写在一起，最后到下面那个函数都以类型Js::OpCode::Yield进行处理。所以整块Chakra中，出现await的基本只有Parser部分。比如ByteCodeEmitter::Emit内：  </p>
+<div class="highlight"><pre><span class="vg">case</span><span class="w"> </span><span class="nl">knopAwait:</span>
+<span class="vg">case</span><span class="w"> </span><span class="nl">knopYield:</span>
+<span class="w">    </span><span class="vg">byteCodeGenerator</span><span class="o">-&gt;</span><span class="vg">StartStatement</span><span class="p">(</span><span class="vg">pnode</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">funcInfo</span><span class="o">-&gt;</span><span class="vg">AcquireLoc</span><span class="p">(</span><span class="vg">pnode</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">Emit</span><span class="p">(</span><span class="vg">pnode</span><span class="o">-&gt;</span><span class="vg">sxUni</span><span class="o">.</span><span class="vg">pnode1</span><span class="p">,</span><span class="w"> </span><span class="vg">byteCodeGenerator</span><span class="p">,</span><span class="w"> </span><span class="vg">funcInfo</span><span class="p">,</span><span class="w"> </span><span class="vg">false</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">EmitYield</span><span class="p">(</span><span class="vg">pnode</span><span class="o">-&gt;</span><span class="vg">sxUni</span><span class="o">.</span><span class="vg">pnode1</span><span class="o">-&gt;</span><span class="vg">location</span><span class="p">,</span><span class="w"> </span><span class="vg">pnode</span><span class="o">-&gt;</span><span class="vg">location</span><span class="p">,</span><span class="w"> </span><span class="vg">byteCodeGenerator</span><span class="p">,</span><span class="w"> </span><span class="vg">funcInfo</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">funcInfo</span><span class="o">-&gt;</span><span class="vg">ReleaseLoc</span><span class="p">(</span><span class="vg">pnode</span><span class="o">-&gt;</span><span class="vg">sxUni</span><span class="o">.</span><span class="vg">pnode1</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">byteCodeGenerator</span><span class="o">-&gt;</span><span class="vg">EndStatement</span><span class="p">(</span><span class="vg">pnode</span><span class="p">);</span>
+<span class="w">    </span><span class="vg">break</span><span class="p">;</span>
+</pre></div>
+<p>await直接被当做yield执行（当然到这里的代码已经经过了其他处理）。</p>
+
+<p>chrome支持，node就会支持的，实际上node支持哪些，看的是V8，而不是标准，尽管说是v8实现ecma 262标准。</p>
+
+<p>上次，<a href="https://github.com/mikeal">Mikeal Rogers</a>来北京说，目前v8已经实现了Async函数，估计10月份左右就能实现。</p>
+
+<p>对Node.js Async函数的期待是它的性能，目前generator转换后会损耗的比较大，而native的实现会避免这些。只要原生实现了Async函数了，Koa 2.x就会发布正式版，就可以大量的使用Async函授构建看起来同步，但获得的是异步性能的web应用了。让我们一起拭目以待吧。</p>
+
+<h2>异常处理</h2>
+
+<p>Node.js里关于异常处理有一个约定，即同步代码采用try/catch，非同步代码采用error-first方式。对于async函数俩说，它的await语句是同步执行的，所以最正常的流程处理是采用try/catch语句捕获。</p>
+<div class="highlight"><pre><span class="vg">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="vg">await</span><span class="w"> </span><span class="vg">asyncFn</span><span class="p">());</span>
+<span class="p">}</span><span class="w"> </span><span class="vg">catch</span><span class="w"> </span><span class="p">(</span><span class="vg">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">error</span><span class="p">(</span><span class="vg">err</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>这是通用性的做法，很多时候，我们需要把异常做的更细致一些，这时只要把Promise的异常处理好就好了。</p>
+
+<ul>
+<li>then(onFulfilled, onRejected)里的onRejected</li>
+<li>catch</li>
+</ul>
+
+<h2>实践</h2>
+
+<ul>
+<li>promise更容易做promisefyAll</li>
+<li>async函数无法批量操作</li>
+</ul>
+
+<p>那么，在常见的web应用里，dao层使用promise比较好，而service层，使用async/await更好</p>
+
+<p>dao层使用promise</p>
+
+<ul>
+<li>crud</li>
+<li>单一模型的方法多</li>
+<li>库自身支持promise</li>
+</ul>
+
+<p>这种用promisefyAll基本几行代码就够了，一般单一模型的操作，不会特别复杂，应变的需求基本不大。</p>
+
+<p>而service层一般是多个model组合操作，多模型操作就可以拆分成多个小的操作，然后使用await来组合，看起来会更加清晰，另外对需求应变也是非常容易的。</p>
+
+<h2>总结</h2>
+
+<ul>
+<li>async函数语义上非常好</li>
+<li>async不需要执行器，它本身具备执行能力，不像generator</li>
+<li>async函数的异常处理采用try/catch和promise的错误处理，非常强大</li>
+<li>await接Promise，Promise自身就足够应对所有流程了</li>
+<li>await释放Promise的组合能力，外加Promise的then，基本无敌</li>
+</ul>
+
+<h1>推导出学习重点</h1>
+
+<ul>
+<li>async函数是趋势，如果<a href="https://github.com/nodejs/CTC/issues/7">Chrome 52. v8 5.1已经支持async函数</a>了，Node.js支持还会远么？</li>
+<li>async和generator函数里都支持promise，所以promise是必须会的</li>
+<li>generator和yield异常强大，不过不会成为主流，所以学会基本用法和promise就好了，没必要所有的都必须会。</li>
+<li>co作为generator执行器是不错的，它更好的是当做Promise 包装器，通过generator支持yieldable，最后返回Promise，是不是有点无耻？</li>
+</ul>
+
+<p>结论：Promise是必须会的，那你为啥不顺势而为呢？</p>
+
+<p>对于新增的特性，可以适当的学习和使用，比如文中AVA测试框架，比如Koa 2.x，更多请关注即将出版的《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》，如果喜欢在线视频的，也可以看看StuQ的Koa课程，微信里搜stuq公众号，回复koa即可。</p>
+
+<h1>联系我</h1>
+
+<p><img src="images/sang.jpg" alt="Sang"></p>
+
+			          	</article>
+			        </div>
+					</div>
+	      </body>
+	    </html>
+			<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+			<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+      <script type="text/javascript" src="toc/toc_conf.js"></script>
+      
+			<SCRIPT type="text/javascript" >
+			<!--
+			$(document).ready(function(){
+          var css_conf = eval(markdown_panel_style);
+          $('#readme').css(css_conf)
+          
+          var conf = eval(jquery_ztree_toc_opts);
+  				$('#tree').ztree_toc(conf);
+
+				
+			});
+			//-->
+			</SCRIPT>
+	  
