@@ -217,6 +217,24 @@
 <li>async function</li>
 </ul>
 
+<p>举几个例子：</p>
+<div class="highlight"><pre><span class="vg">test</span><span class="p">(</span><span class="c1">&#39;synchronization&#39;, t =&gt; {})</span>
+<span class="vg">test</span><span class="o">.</span><span class="vg">cb</span><span class="p">(</span><span class="c1">&#39;callback&#39;, t =&gt; {})</span>
+<span class="vg">test</span><span class="p">(</span><span class="c1">&#39;promise&#39;, t =&gt; {})</span>
+<span class="vg">test</span><span class="p">(</span><span class="c1">&#39;generator function&#39;,  function * (t) {})</span>
+<span class="vg">test</span><span class="p">(</span><span class="c1">&#39;async function&#39;, async t =&gt; {})</span>
+</pre></div>
+<p>大家了解这几种写法的区别么？</p>
+
+<p>总结一下就是：</p>
+
+<ul>
+<li>test和test.cb是两种：同步和callback处理。</li>
+<li>在test里，第二个参数有3种写法，普通函数、Generator函数和Async函数。</li>
+</ul>
+
+<p>它们就是我们的主角，几乎所有的流程控制都在里面了。看一个模块或者框架，如果能这样比较，就非常容易看到它们的本质，一般都是写的人比用的人精，但用的人也可以变成写的人，是不是？</p>
+
 <h2>准备</h2>
 <div class="highlight"><pre><span class="nv">$ </span>npm init
 <span class="nv">$ </span>npm i -D ava
