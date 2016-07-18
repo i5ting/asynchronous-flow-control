@@ -1,6 +1,8 @@
 # asynchronous-flow-control
 
-《深入浅出js（Node.js）异步流程控制》
+StuQ分享专题《深入浅出js（Node.js）异步流程控制》完整版
+
+其他分享
 
 - [InfoQ 前端之巅分享 精简版](https://github.com/i5ting/asynchronous-flow-control/blob/master/31.md)
 
