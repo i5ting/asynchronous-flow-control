@@ -945,6 +945,14 @@ var Promise = require("bluebird");
 global.Promise = require("bluebird");
 ```
 
+Node.js native promise 相比 bluebird 就是慢，bluebird作者的解释：
+
+- node中的Promise虽然来自v8但其实现是js而不是C。即使用C也并不会快多少，因为promise基本都是在操作js对象和通信
+- node中使用new Promise的方式，这一下就差了3个开销很大的closures
+
+附连接：http://programmers.stackexchange.com/questions/278778/why-are-native-es6-promises-slower-and-more-memory-intensive-than-bluebird
+
+
 ## Promisification
 
 > Promisification means converting an existing promise-unaware API to a promise-returning API.
