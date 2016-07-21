@@ -1678,25 +1678,38 @@ async / await，就我所知比较早的实现出于F#等函数式语言，后�
 
 - await + async函数
 - await + Promise
+- await + co（co会返回Promise，这样可以Yieldable，但难度较大，适合老手）
+
+头2种是比较常用的，第三种co作为promise生成器，是一种hack的办法。
+
+
+下面给出第一种和第二种的示例：
 
 ```
-async function a1() {
+async function a2() {
   return new Promise((resolve, reject) => {
     setTimeout(resolve, 1000);
   })
 }
 
-async function a2() {
-  await a1();
-  console.log("hello world");
+async function a1() {
+  console.log("hello a1 and start a2");
+  await a2();
+  console.log("hello end a2");
 }
 
-a2()
+async function a0() {
+  console.log("hello a0 and start a1");
+  await a1();
+  console.log("hello end a1");
+}
+
+a0()
 ```
 
 ## 一切都是Promise
 
-await后面只能接Promise
+await后面可以接Promise
 
 ```
 var asyncFn = async function () {
@@ -1897,25 +1910,6 @@ dao层使用promise
 **推荐**：使用Async函数 + Promise组合，如下图所示。
 
 ![Suggest](images/suggest.png)
-
-**实践**
-
-合理的结合Promise和Async函数是可以非常高效的，但也要因场景而异
-
-- Promise更容易做promisefyAll（比如使用bluebird）
-- Async函数无法批量操作
-
-那么，在常见的Web应用里，我们总结的实践是，dao层使用Promise比较好，而service层，使用Async/Await更好。
-
-dao层使用Promise：
-
-- crud
-- 单一模型的方法多
-- 库自身支持Promise
-
-这种用promisefyAll基本几行代码就够了，一般单一模型的操作，不会特别复杂，应变的需求基本不大。
-
-而service层一般是多个Model组合操作，多模型操作就可以拆分成多个小的操作，然后使用Await来组合，看起来会更加清晰，另外对需求应变也是非常容易的。
 
 
 对于新增的特性，可以适当的学习和使用，比如文中AVA测试框架，比如Koa 2.x，更多请关注即将出版的《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》，如果喜欢在线视频的，也可以看看StuQ的Koa课程，微信里搜stuq公众号，回复koa即可。

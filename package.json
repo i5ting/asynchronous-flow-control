@@ -4,7 +4,7 @@
   "description": "InfoQ 前端之巅分享专业《深入浅出js（Node.js）异步流程控制》",
   "main": "index.js",
   "scripts": {
-    "start":"./generate.sh",
+    "start": "./generate.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +25,8 @@
     "gulp-open": "^0.3.1",
     "gulp-rename": "^1.2.0",
     "shelljs": "^0.3.0"
+  },
+  "dependencies": {
+    "debug": "^2.2.0"
   }
 }
