@@ -243,6 +243,23 @@ test('async function', async t => {
 - 第一个是并行的，所以顺序有点乱
 - 第二个是顺序执行 `-s`
 
+# 流程控制的6个演进步骤
+
+js流程控制的演进过程，分以下6部分:
+
+1. 同步代码
+2. 异步JavaScript: callback hell
+3. Thunk
+4. Promise/a+
+5. 生成器Generators/yield
+6. Async函数/Await（以前说是ES7 stage-3）
+
+看起来挺简单的，作为*js（沾边）工程师的各位自测一下，当前是哪个阶段？
+
+![Fc](fc.png)
+
+对比一下此图，是否有不了解的呢？下面一一进行介绍。
+
 # Promise
 
 顺序执行的代码和错误优先的回调方式都是js引擎默认支持的，这部分大家会调用接口，无太多变化，而Promise是对callback的思考，或者说改良方案，目前使用非常普遍，这里详细讲解一下。
