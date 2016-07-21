@@ -1733,23 +1733,35 @@ loser
 <ul>
 <li>await + async函数</li>
 <li>await + Promise</li>
+<li>await + co（co会返回Promise，这样可以Yieldable，但难度较大，适合老手）</li>
 </ul>
-<div class="highlight"><pre><span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<p>头2种是比较常用的，第三种co作为promise生成器，是一种hack的办法。</p>
+
+<p>下面给出第一种和第二种的示例：</p>
+<div class="highlight"><pre><span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">((</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="vg">setTimeout</span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="il">1000</span><span class="p">);</span>
 <span class="w">  </span><span class="p">})</span>
 <span class="p">}</span>
 
-<span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="vg">await</span><span class="w"> </span><span class="vg">a1</span><span class="p">();</span>
-<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">);</span>
+<span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;hello a1 and start a2&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="vg">await</span><span class="w"> </span><span class="vg">a2</span><span class="p">();</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;hello end a2&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="vg">a2</span><span class="p">()</span>
+<span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="vg">a0</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;hello a0 and start a1&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="vg">await</span><span class="w"> </span><span class="vg">a1</span><span class="p">();</span>
+<span class="w">  </span><span class="vg">console</span><span class="o">.</span><span class="vg">log</span><span class="p">(</span><span class="s2">&quot;hello end a1&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="vg">a0</span><span class="p">()</span>
 </pre></div>
 <h2>一切都是Promise</h2>
 
-<p>await后面只能接Promise</p>
+<p>await后面可以接Promise</p>
 <div class="highlight"><pre><span class="vg">var</span><span class="w"> </span><span class="vg">asyncFn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="vg">async</span><span class="w"> </span><span class="vg">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="vg">return</span><span class="w"> </span><span class="vg">new</span><span class="w"> </span><span class="vg">Promise</span><span class="p">(</span><span class="vg">function</span><span class="w"> </span><span class="p">(</span><span class="vg">resolve</span><span class="p">,</span><span class="w"> </span><span class="vg">reject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="vg">try</span><span class="w"> </span><span class="p">{</span>
@@ -1946,29 +1958,6 @@ co章节里讲了，只能<code>yield function, promise, generator, array, or ob
 <p><strong>推荐</strong>：使用Async函数 + Promise组合，如下图所示。</p>
 
 <p><img src="images/suggest.png" alt="Suggest"></p>
-
-<p><strong>实践</strong></p>
-
-<p>合理的结合Promise和Async函数是可以非常高效的，但也要因场景而异</p>
-
-<ul>
-<li>Promise更容易做promisefyAll（比如使用bluebird）</li>
-<li>Async函数无法批量操作</li>
-</ul>
-
-<p>那么，在常见的Web应用里，我们总结的实践是，dao层使用Promise比较好，而service层，使用Async/Await更好。</p>
-
-<p>dao层使用Promise：</p>
-
-<ul>
-<li>crud</li>
-<li>单一模型的方法多</li>
-<li>库自身支持Promise</li>
-</ul>
-
-<p>这种用promisefyAll基本几行代码就够了，一般单一模型的操作，不会特别复杂，应变的需求基本不大。</p>
-
-<p>而service层一般是多个Model组合操作，多模型操作就可以拆分成多个小的操作，然后使用Await来组合，看起来会更加清晰，另外对需求应变也是非常容易的。</p>
 
 <p>对于新增的特性，可以适当的学习和使用，比如文中AVA测试框架，比如Koa 2.x，更多请关注即将出版的《更了不起的 Node 4：将下一代 Web 框架 Koa 进行到底》，如果喜欢在线视频的，也可以看看StuQ的Koa课程，微信里搜stuq公众号，回复koa即可。</p>
 
